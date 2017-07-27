@@ -42,7 +42,9 @@
 
             "activity_nums" : 2,   // 活动数量
 
-            "pageviews": 100       // 阅读量 *仅做排序使用属性
+            "is_hot": 0,           // 是否热门 [type: boolean(0, 1)] *仅做搜索使用的属性
+
+            "pageviews": 100       // 阅读量 *仅做排序使用的属性
         }
     },
 
@@ -57,7 +59,7 @@
             },
             "response":
             {
-                "article_categories": ["{ARTICLE_CATEGORY}"]
+                "data": ["{ARTICLE_CATEGORY}"]
             }
         },
 
@@ -66,14 +68,28 @@
         {
             "request":
             {
-                "page": "1",                        // *当前页数
-                "per_page": "10",                   // *每页显示的数量
-                "article_category_id": 0,           // 文章分类ID
-                "s[attribute_name]": "<SORT_ORDER>" // 排序
+                "page": "1",                          // *当前页数
+                "per_page": "10",                     // *每页显示的数量
+                "article_category_id": 0,             // 文章分类ID
+                "s[attribute_name]": "<SORT_ORDER>",  // 排序
+                "q[attribute_name]": ""               // 搜索
             },
             "response":
             {
-                "articles": ["{ARTICLE}"]
+                "data": ["{ARTICLE}"]
+            }
+        },
+
+        // 获取热搜(s)
+        "GET /v1/hotsearches":
+        {
+            "request":
+            {
+                "showing_numbers": "6" // 显示的数量 【默认 6】
+            },
+            "response":
+            {
+                "data": ["KEYWORDS"] // 搜索关键字
             }
         }
     }
