@@ -1,0 +1,76 @@
+{
+    "meta":
+    {
+        "title"     : "Culture API",
+        "output"    : "user-api",
+        "author"    : "Taylor",
+        "source"    : "none",
+        "prefix"    : ""
+    },
+
+    "enum":
+    {
+        // 用户性别
+        "GENDER": {
+             "0": "保密",
+             "1": "男",
+             "2": "女"
+        }
+    },
+
+    "model":
+    {
+        "USER": {
+            "nickname": "",          // 用户昵称
+            "avatar": "",            // 用户头像(URL)
+            "is_identification": ""  // 是否认证 [type: boolean(0,1)]
+        }
+    },
+
+    "controller":
+    {
+        // 给用户发送验证码 (验证手机号是否存在)
+        "POST /v1/user/verification_code":
+        {
+            "request":
+            {
+                "mobile": "185****3124" // 用户手机号
+            },
+        
+            "response":
+            {
+                "error_code"    : "<ERROR_CODE>",       // 错误代码
+                "error_desc"    : "错误描述"             // 错误描述
+            }
+        },
+        
+        // 登录 *token_needed
+        "POST /v1/user/login":
+        {
+            "request":
+            {
+                "mobile": "185****3124",          // 用户手机号
+                "verification_code": "1328",      // 用户手机验证码
+                "password": ""                    // 密码
+            },
+
+            "response":
+            {
+                "error_code"    : "<ERROR_CODE>",       // 错误代码
+                "error_desc"    : "错误描述"             // 错误描述
+            }
+        },
+        
+        // 获取用户资料 *token_needed
+        "GET /v1/user/:id" :
+        {
+            "request" :
+            {
+            },
+            "response" :
+            {
+                "user": "{USER}"
+            }
+        }
+    }
+}

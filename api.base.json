@@ -1,0 +1,49 @@
+{
+    "meta":
+    {
+        "title"     : "Culture API",
+        "output"    : "base-api",
+        "author"    : "Taylor",
+        "source"    : "none",
+        "prefix"    : ""
+    },
+
+    "headers" : {
+        "Authorization": "token"   // TOKEN
+    },
+
+    "enum" :
+    {
+        // 错误代码
+        "ERROR_CODE" :
+        {
+            "OK"                : 0,        // 正常
+            "UNKNOWN_ERROR"     : 10000,    // 内部错误
+            "TOKEN_INVALID"     : 10001,    // Token 无效
+            "TOKEN_EXPIRED"     : 10002,    // Token 过期
+            "SIGN_INVALID"      : 10003,    // Sign 无效
+            "SIGN_EXPIRED"      : 10004     // Sign 过期
+        }
+    },
+
+    "model" :
+    {
+        // 翻页结果
+        "PAGED" :
+        {
+            "total"             : 1000,                         // 总数
+            "page"              : 2,                            // 页号
+            "size"              : 10,                           // 每页数量
+            "more"              : 1                             // 是否还有更多
+        },
+        // 响应状态
+        "response": {
+            "error_code": "<ERROR_CODE>",   // 错误状态码 （0、请求成功，其他、请求失败）
+            "error_desc": "您请求的资源不存在" // 错误描述
+        }
+    },
+
+    "controller" :
+    {
+    }
+}

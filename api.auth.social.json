@@ -1,0 +1,33 @@
+{
+    "meta":
+    {
+        "title"     : "Culture API",
+        "output"    : "auth-social-api",
+        "author"    : "Taylor",
+        "source"    : "none",
+        "prefix"    : ""
+    },
+
+    "enum" :
+    {
+        // 帐号类型
+        "SOCIAL_VENDOR" :
+        {
+            "UNKNOWN"           : 0,    // 未知
+            "WEIXIN"            : 1,    // 微信
+            "WEIBO"             : 2,    // 微博
+            "QQ"                : 3,    // QQ
+            "TAOBAO"            : 4,    // 淘宝
+            "WEAPP"             : 5     // 微信小程序
+        }
+
+    },
+
+    "model" :
+    {
+    },
+
+    "controller" :
+    {
+    }
+}

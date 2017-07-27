@@ -1,0 +1,80 @@
+{
+    "meta":
+    {
+        "title"     : "Culture API",
+        "output"    : "article-api",
+        "author"    : "Taylor",
+        "source"    : "none",
+        "prefix"    : ""
+    },
+
+  	"enum":
+  	{
+        // 排序方式
+        "SORT_ORDER": {
+            "ASC": "asc",   // asc
+            "DESC": "desc"  // desc
+        }
+
+        // 文章列表
+  	},
+
+    "model":
+    {
+        // 文章类别 对象
+        "ARTICLE_CATEGORY": {
+            "id": 1,
+            "name": "",     // 名称
+            "desc": ""      // 简介
+        },
+
+        // 文章 对象
+        "ARTICLE": {
+            "id": 1,
+            "name": "",            // 名称（包含：姓名）
+            "thumbnail": "",       // 缩略图（包含：大师头像）
+            "banner": "",          // banner（包含：背景图）
+            "item": [],            // 标签
+            "distance": 200,       // 距离（m）*可做排序使用属性
+            "location": "",        // 内容所在地
+            "desc": "",            // 用于：内容描述、专题简介、内容年代、主题、个人简介
+            "timed_at": "",        // 时间
+
+            "activity_nums" : 2,   // 活动数量
+
+            "pageviews": 100       // 阅读量 *仅做排序使用属性
+        }
+    },
+
+    "controller":
+    {
+        // 获取文章类别(s)
+        "GET /v1/article_categories":
+        {
+            "request":
+            {
+                "top_id": 0 // 上一级ID，没有为0
+            },
+            "response":
+            {
+                "article_categories": ["{ARTICLE_CATEGORY}"]
+            }
+        },
+
+        // 获取文章(s)
+        "GET /v1/articles":
+        {
+            "request":
+            {
+                "page": "1",                        // *当前页数
+                "per_page": "10",                   // *每页显示的数量
+                "article_category_id": 0,           // 文章分类ID
+                "s[attribute_name]": "<SORT_ORDER>" // 排序
+            },
+            "response":
+            {
+                "articles": ["{ARTICLE}"]
+            }
+        }
+    }
+}
