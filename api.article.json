@@ -26,8 +26,7 @@
             "id": 1,
             "topid": 0,     // 上级ID
             "name": "",     // 名称
-            "desc": ""
-             // 简介
+            "desc": ""      // 简介
         },
 
         // 文章 对象
@@ -36,7 +35,7 @@
             "name": "",             // 名称（包含：姓名）
             "thumbnail": "",        // 缩略图（包含：大师头像）
             "banner": "",           // banner（包含：背景图）
-            "item": [],             // 标签
+            "tags": [],             // 标签
             "distance": 200,        // 距离（m）*可做排序使用属性
             "location": "",         // 内容所在地
             "desc": "",             // 用于：内容描述、专题简介、内容年代、主题、个人简介
@@ -77,7 +76,7 @@
             {
                 "page": "1",                          // *当前页数
                 "per_page": "10",                     // *每页显示的数量
-                "article_category_id": 0,             // 文章分类ID
+                "article_category_id": 0,             // *文章分类ID
                 "s[attribute_name]": "<SORT_ORDER>",  // 排序
                 "q[attribute_name]": ""               // 搜索
             },
