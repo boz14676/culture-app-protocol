@@ -24,8 +24,10 @@
         // 文章类别 对象
         "ARTICLE_CATEGORY": {
             "id": 1,
+            "topid": 0,     // 上级ID
             "name": "",     // 名称
-            "desc": ""      // 简介
+            "desc": ""
+             // 简介
         },
 
         // 文章 对象
@@ -40,14 +42,16 @@
             "desc": "",             // 用于：内容描述、专题简介、内容年代、主题、个人简介
             "timed_at": "",         // 时间
 
-            "activity_nums" : 2,    // 活动数量
+            "activity_numbers" : 2, // 活动数量
 
             "is_hot": 0,            // 是否热门 [type: boolean(0, 1)] *仅做搜索使用的属性
 
-            "comment_numbers": 100, // 用户的评论数量 *可用作做排序使用的属性
-            "like_numbers": 100,    // 用户的点赞数量 *可用作排序使用的属性
+            "comment_numbers": 100, // 评论数量 *可用作做排序使用的属性
+            "like_numbers": 100,    // 点赞数量 *可用作排序使用的属性
 
-            "pageviews": 100        // 阅读量 *仅做排序使用的属性
+            "reading_numbers": 100, // 阅读数量 *仅做排序使用的属性
+
+            "details": ""           // 内容
         }
     },
 
@@ -58,7 +62,7 @@
         {
             "request":
             {
-                "top_id": 0 // 上一级ID，没有为0
+                "topid": 0 // 上一级ID，没有为0
             },
             "response":
             {
@@ -80,6 +84,18 @@
             "response":
             {
                 "data": ["{ARTICLE}"]
+            }
+        },
+
+        // 获取文章
+        "GET /v1/article/:id":
+        {
+            "request":
+            {
+            },
+            "response":
+            {
+                "data": "{ARTICLE}"
             }
         },
 
