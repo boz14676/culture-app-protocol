@@ -1,0 +1,71 @@
+{
+    "meta":
+    {
+        "title"     : "Culture API",
+        "output"    : "others-api",
+        "author"    : "Taylor",
+        "source"    : "none",
+        "prefix"    : ""
+    },
+
+  	"enum":
+  	{
+        // 首页推荐位的位置
+        "ADR": {
+            "banner_adr": 1,     // 第一个 section
+            "sec_adr": 2,        // 第二个 section
+            "platform_adr": 3    // 第三个 section
+        }
+  	},
+
+    "model":
+    {
+        // 热搜对象
+        "HOTSEARCH": {
+            "id": 1,
+            "article_category_id": 1,  // 文章分类ID
+            "name": ""                 // 名称
+        },
+
+        // 首页推荐栏目对象
+        "HOME_SECTION_ITEM": {
+            "id": 1,
+            "name": "",      // 名称
+            "thumbnail": "", // 缩略图
+            "extra": "",     // 用于：人气
+            "url": ""        // 跳转链接
+        }
+    },
+
+    "controller":
+    {
+        // 获取热搜(s)
+        "GET /v1/hotsearches":
+        {
+            "request":
+            {
+                "article_category_id": 1, // *文章分类ID
+                "numbers": 6              // 显示数量（默认为6）
+            },
+            "response":
+            {
+                "data": ["{HOTSEARCH}"]
+            }
+        },
+
+        // 获取首页推荐栏目
+        "GET /v1/home_sections":
+        {
+            "request":
+            {
+                "confs[<ADR>]": "NUMBER" // confs[首页推荐位的位置]: 显示数量
+            },
+            "response":
+            {
+                "data": [
+                    {"<ADR>": "{HOME_SECTION_ITEM}"}
+                ]
+            }
+        }
+    }
+}

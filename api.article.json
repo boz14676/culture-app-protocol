@@ -21,7 +21,7 @@
 
     "model":
     {
-        // 文章类别 对象
+        // 文章分类 对象
         "ARTICLE_CATEGORY": {
             "id": 1,
             "topid": 0,     // 上级ID
@@ -32,31 +32,34 @@
         // 文章 对象
         "ARTICLE": {
             "id": 1,
-            "name": "",             // 名称（包含：姓名）
-            "thumbnail": "",        // 缩略图（包含：大师头像）
-            "banner": "",           // banner（包含：背景图）
-            "tags": [],             // 标签
-            "distance": 200,        // 距离（m）*可做排序使用属性
-            "location": "",         // 内容所在地
-            "desc": "",             // 用于：内容描述、专题简介、内容年代、主题、个人简介
-            "timed_at": "",         // 时间
+            "article_category_id": 1,  // 文章分类ID
+            "name": "",                // 名称（包含：姓名）
+            "thumbnail": "",           // 缩略图（包含：大师头像）
+            "banner": "",              // banner（包含：背景图）
+            "tags": [],                // 标签
+            "distance": 200,           // 距离（m）*可做排序使用属性
+            "location": "",            // 内容所在地
+            "desc": "",                // 用于：内容描述、专题简介、内容年代、主题、个人简介
+            "timed_at": "",            // 时间
 
-            "activity_numbers" : 2, // 活动数量
+            "activity_numbers": 2,     // 活动数量
 
-            "is_hot": 0,            // 是否热门 [type: boolean(0, 1)] *仅做搜索使用的属性
+            "is_hot": 0,               // 是否热门 [type: boolean(0, 1)] *仅做搜索使用的属性
 
-            "comment_numbers": 100, // 评论数量 *可用作做排序使用的属性
-            "like_numbers": 100,    // 点赞数量 *可用作排序使用的属性
+            "comment_numbers": 100,    // 评论数量 *可用作做排序使用的属性
+            "like_numbers": 100,       // 点赞数量 *可用作排序使用的属性
 
-            "reading_numbers": 100, // 阅读数量 *仅做排序使用的属性
+            "reading_numbers": 100,    // 阅读数量 *仅做排序使用的属性
 
-            "details": ""           // 内容
+            "is_guess": 0,             // 猜你喜欢 [type: boolean(0, 1)] *仅做搜索使用的属性
+
+            "details": ""              // 内容
         }
     },
 
     "controller":
     {
-        // 获取文章类别(s)
+        // 获取文章分类(s)
         "GET /v1/article_categories":
         {
             "request":
@@ -76,7 +79,6 @@
             {
                 "page": "1",                          // *当前页数
                 "per_page": "10",                     // *每页显示的数量
-                "article_category_id": 0,             // *文章分类ID
                 "s[attribute_name]": "<SORT_ORDER>",  // 排序
                 "q[attribute_name]": ""               // 搜索
             },
@@ -103,11 +105,12 @@
         {
             "request":
             {
-                "showing_numbers": "6" // 显示的数量 【默认 6】
+                "article_category_id": 1, // *文章分类ID
+                "numbers": 6              // 显示数量（默认为6）
             },
             "response":
             {
-                "data": ["KEYWORDS"] // 搜索关键字
+                "data": ["{HOTSEARCH}"]
             }
         }
     }
