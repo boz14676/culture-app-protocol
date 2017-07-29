@@ -71,6 +71,31 @@
             {
                 "user": "{USER}"
             }
+        },
+
+        // 更改头像 *token_needed
+        "POST /v1/user/avatar/update":
+        {
+            "request": {
+                "photo": "" // 照片 文件二进制数据
+            },
+            "response":
+            {
+                "avatar": "" // 图片地址
+            }
+        },
+
+        // 修改用户资料
+        "POST /v1/user/profile/update":
+        {
+            "request": {
+                "nickname": "" // 昵称
+            },
+            "response":
+            {
+                "error_code"    : "<ERROR_CODE>",       // 错误代码
+                "error_desc"    : "错误描述"             // 错误描述
+            }
         }
     }
 }

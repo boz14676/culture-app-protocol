@@ -1,0 +1,54 @@
+{
+    "meta":
+    {
+        "title"     : "Culture API",
+        "output"    : "article-api",
+        "author"    : "Taylor",
+        "source"    : "none",
+        "prefix"    : ""
+    },
+
+  	"enum":
+  	{
+        // 排序方式
+        "SORT_ORDER": {
+            "ASC": "asc",   // asc
+            "DESC": "desc"  // desc
+        }
+  	},
+
+    "model":
+    {
+        // 图片对象
+        "PHOTO": {
+            "id": "",
+            "name": "",                    // 名称
+            "url": {
+                "thumb": "",               // 缩略图
+                "large": ""                // 原图
+            },
+
+            "imageable_type": "article",   // 搜索的主题，默认为article *仅用于搜索时使用
+            "imageable_id": ""             // 主题ID *仅用于搜索时使用
+        }
+    },
+
+    "controller":
+    {
+        // 获取图片(s)
+        "GET /v1/photos":
+        {
+            "request":
+            {
+                "page": "1",                             // *当前页数
+                "per_page": "10",                        // *每页显示的数量
+                "q[attribute_name]": "",                 // 搜索
+                "s[attribute_name]": "<SORT_ORDER>"      // 排序
+            },
+            "response":
+            {
+                "data": ["{PHOTO}"]
+            }
+        }
+    }
+}
