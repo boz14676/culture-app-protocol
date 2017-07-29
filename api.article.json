@@ -14,9 +14,20 @@
         "SORT_ORDER": {
             "ASC": "asc",   // asc
             "DESC": "desc"  // desc
+        },
+
+        // 文章分类 类型
+        "ARTILCE_CATEGORY_TYPE": {
+            "ONE": 1,
+            "TWO": 2,
+            "THREE": 3,
+            "FOUR": 4,
+            "FIVE": 5,
+            "SIX": 6,
+            "SEVEN": 7,
+            "EIGHT": 8
         }
 
-        // 文章列表
   	},
 
     "model":
@@ -24,9 +35,10 @@
         // 文章分类 对象
         "ARTICLE_CATEGORY": {
             "id": 1,
-            "topid": 0,     // 上级ID
-            "name": "",     // 名称
-            "desc": ""      // 简介
+            "topid": 0,                           // 上级ID
+            "type": "<ARTILCE_CATEGORY_TYPE>",    // 类型
+            "name": "",                           // 名称
+            "desc": ""                            // 简介
         },
 
         // 文章 对象
