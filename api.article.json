@@ -30,10 +30,10 @@
 
         // 文章详情展示类型
         "SHOWING_TYPE_INFOR": {
-            "ONE": 1,
-            "TWO": 2,
-            "THREE": 3,
-            "FOUR": 4
+            "ONE": 1,           // 介绍类型
+            "TWO": 2,           // 场馆类型
+            "THREE": 3,         // 预订类型
+            "FOUR": 4           // 播放类型
         }
 
   	},
