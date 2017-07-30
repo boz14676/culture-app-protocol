@@ -26,6 +26,16 @@
             "avatar": "",             // 用户头像(URL)
             "is_bind": "",            // 是否绑定 [type: boolean(0,1)]
             "is_identification": "",  // 是否认证 [type: boolean(0,1)]
+
+            // 数量统计
+            "numbers_count": {
+                "order": 0,             // 订单总数量
+                "order_wait_pay": 0,    // 订单待支付数量
+                "order_paid": 0,        // 订单已预订数量
+                "order_refunded": 0,    // 订单已退款数量
+                "enshrine": 0,          // 收藏数量
+                "comment": 0            // 评论数量
+            },
             "token": ""               // TOKEN
         }
     },
@@ -63,7 +73,7 @@
             }
         },
 
-        // 注册
+        // 登录
         "POST /v1/user/login":
         {
             "request":
@@ -94,10 +104,8 @@
             }
         },
 
-        //
-        
-        // 获取用户资料 *token_needed
-        "GET /v1/user/:id" :
+        // 获取用户 *token_needed
+        "GET /v1/user" :
         {
             "request" :
             {
