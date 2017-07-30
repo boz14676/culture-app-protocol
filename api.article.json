@@ -64,6 +64,7 @@
             "id": 1,
             "original_article_category": "{ARTICLE_CATEGORY}",  // 文章分类 对象
             "article_category_id": 1,                           // 文章分类ID
+            "is_activity": 1,                                   // 是否可预约[type: boolean(0, 1)]
             "name": "",                                         // 名称（包含：姓名）
             "thumbnail": "",                                    // 缩略图（包含：大师头像）
             "banner": "",                                       // banner（包含：背景图）

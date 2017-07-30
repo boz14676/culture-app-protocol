@@ -28,7 +28,7 @@
         // 订单对象
         "ORDER": {
             "serial_number": "",                        // 订单编号
-            "status": "<ORDER_STATUS>",                 // 订单状态
+            "status": "<ORDER_STATUS>",                 // 订单状态 *可用于搜索
             "type": "<ORDER_TYPE>",                     // 订单类型
             "goods_price": "",                          // 商品单价
             "goods_numbers": "",                        // 商品数量

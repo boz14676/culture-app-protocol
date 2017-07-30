@@ -1,0 +1,51 @@
+{
+    "meta":
+    {
+        "title"     : "Culture API",
+        "output"    : "video-api",
+        "author"    : "Taylor",
+        "source"    : "none",
+        "prefix"    : ""
+    },
+
+  	"enum":
+  	{
+        // 主题类型
+        "VIDEOABLE_TYPE": {
+            "ARTICLE_CATEGORY": "article_category",     // 文章列表主题
+            "ARTICLE": "article"                        // 文章主题
+        }
+  	},
+
+    "model":
+    {
+        // 视频对象
+        "VIDEO": {
+            "id": "",
+            "name": "",                             // 名称
+            "url": "",                              // 视频地址
+
+            "videoable_type": "<VIDEOABLE_TYPE>",   // 主题类型 *仅用于搜索时使用
+            "videoable_id": ""                      // 主题ID *仅用于搜索时使用
+        }
+    },
+
+    "controller":
+    {
+        // 获取视频(s)
+        "GET /v1/videos":
+        {
+            "request":
+            {
+                "page": "1",                             // *当前页数
+                "per_page": "10",                        // *每页显示的数量
+                "q[attribute_name]": "",                 // 搜索
+                "s[attribute_name]": "<SORT_ORDER>"      // 排序
+            },
+            "response":
+            {
+                "data": ["{VIDEO}"]
+            }
+        }
+    }
+}
