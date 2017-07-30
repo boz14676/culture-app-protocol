@@ -47,6 +47,8 @@
             "showing_type_list": "<SHOWING_TYPE_LIST>",     // 文章列表展示类型
             "showing_type_infor": "<SHOWING_TYPE_INFOR>",   // 文章详情展示类型
             "name": "",                                     // 名称
+            "icon": "",                                     // 图标
+            "banner": "",                                   // banner
             "desc": "",                                     // 简介
 
             "is_music": 0,                                  // 是否有音乐 [type: boolean(0, 1)]
