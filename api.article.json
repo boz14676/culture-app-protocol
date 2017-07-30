@@ -45,7 +45,7 @@
 
         // 文化场馆 详情
         "VENUE_INFOR": {
-            "business_hours": "", // 营业时间
+            "opening_hours": "",  // 营业时间
             "contact": "",        // 联系方式
             "transport": ""       // 公共交通
         },
@@ -53,31 +53,34 @@
         // 文章 对象
         "ARTICLE": {
             "id": 1,
-            "article_category_id": 1,     // 文章分类ID
-            "name": "",                   // 名称（包含：姓名）
-            "thumbnail": "",              // 缩略图（包含：大师头像）
-            "banner": "",                 // banner（包含：背景图）
-            "photos": "",                 // 图片（包含：藏品图片）
-            "label": [],                  // 标签
-            "distance": 200,              // 距离（m）*可做排序使用属性
-            "address": "",                // 位置
-            "desc": "",                   // 用于：内容描述、专题简介、内容年代、主题、个人简介
-            "client_timed_at": "",        // 时间
+            "article_category_id": 1,               // 文章分类ID
+            "name": "",                             // 名称（包含：姓名）
+            "thumbnail": "",                        // 缩略图（包含：大师头像）
+            "banner": "",                           // banner（包含：背景图）
+            "photos": "",                           // 图片（包含：藏品图片）
+            "label": [],                            // 标签
 
-            "activity_numbers": 2,        // 活动数量
+            "location": "116.421516,39.897224",     // 坐标
+            "address": "",                          // 位置
+            "desc": "",                             // 用于：内容描述、专题简介、内容年代、主题、个人简介
+            "client_timed_at": "",                  // 时间
 
-            "is_hot": 0,                  // 是否热门 [type: boolean(0, 1)] *仅做搜索使用的属性
+            "activity_numbers": 2,                  // 活动数量
 
-            "comment_numbers": 100,       // 评论数量 *可用作做排序使用的属性
-            "like_numbers": 100,          // 点赞数量 *可用作排序使用的属性
+            "distance": 200,                        // 距离（m）*仅做排序使用属性
 
-            "reading_numbers": 100,       // 阅读数量 *仅做排序使用的属性
+            "is_hot": 0,                            // 是否热门 [type: boolean(0, 1)] *仅做搜索使用的属性
 
-            "is_guess": 0,                // 猜你喜欢 [type: boolean(0, 1)] *仅做搜索使用的属性
+            "comment_numbers": 100,                 // 评论数量 *可用作做排序使用的属性
+            "like_numbers": 100,                    // 点赞数量 *可用作排序使用的属性
 
-            "details": "",                // 内容
+            "reading_numbers": 100,                 // 阅读数量 *仅做排序使用的属性
 
-            "extra": "{VENUE_INFOR}|''"   // 扩展字段 [type: mixed] *可用于文化场馆的详情信息
+            "is_guess": 0,                          // 猜你喜欢 [type: boolean(0, 1)] *仅做搜索使用的属性
+
+            "details": "",                          // 内容
+
+            "extra": "{VENUE_INFOR}|''"             // 扩展字段 [type: mixed] *可用于文化场馆的详情信息
         },
 
         // 图片对象

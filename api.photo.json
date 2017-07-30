@@ -28,7 +28,7 @@
                 "large": ""                // 原图
             },
 
-            "imageable_type": "article",   // 搜索的主题，默认为article *仅用于搜索时使用
+            "imageable_type": "article",   // 主题类型 *仅用于搜索时使用
             "imageable_id": ""             // 主题ID *仅用于搜索时使用
         }
     },

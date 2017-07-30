@@ -20,17 +20,20 @@
 
     "model":
     {
+        // 用户对象
         "USER": {
-            "nickname": "",          // 用户昵称
-            "avatar": "",            // 用户头像(URL)
-            "is_identification": ""  // 是否认证 [type: boolean(0,1)]
+            "nickname": "",           // 用户昵称
+            "avatar": "",             // 用户头像(URL)
+            "is_bind": "",            // 是否绑定 [type: boolean(0,1)]
+            "is_identification": "",  // 是否认证 [type: boolean(0,1)]
+            "token": ""               // TOKEN
         }
     },
 
     "controller":
     {
         // 给用户发送验证码 (验证手机号是否存在)
-        "POST /v1/user/verification_code":
+        "POST /v1/user/code":
         {
             "request":
             {
@@ -44,22 +47,54 @@
             }
         },
         
-        // 登录 *token_needed
-        "POST /v1/user/login":
+        // 注册
+        "POST /v1/user/register":
         {
             "request":
             {
                 "mobile": "185****3124",          // 用户手机号
-                "verification_code": "1328",      // 用户手机验证码
+                "code": "132898",                 // 验证码
                 "password": ""                    // 密码
             },
 
             "response":
             {
-                "error_code"    : "<ERROR_CODE>",       // 错误代码
-                "error_desc"    : "错误描述"             // 错误描述
+                "data": "{USER}"
             }
         },
+
+        // 注册
+        "POST /v1/user/login":
+        {
+            "request":
+            {
+                "mobile": "185****3124",          // 用户手机号
+                "password": ""                    // 密码
+            },
+
+            "response":
+            {
+                "error_code"    : "<ERROR_CODE>",    // 错误代码
+                "error_desc"    : "错误描述"          // 错误描述
+            }
+        },
+
+        // 验证原始密码 *token_needed
+        "POST /v1/user/check_original_password":
+        {
+            "request":
+            {
+                "original_password": "" // 密码
+            },
+
+            "response":
+            {
+                "error_code"    : "<ERROR_CODE>",    // 错误代码
+                "error_desc"    : "错误描述"          // 错误描述
+            }
+        },
+
+        //
         
         // 获取用户资料 *token_needed
         "GET /v1/user/:id" :
