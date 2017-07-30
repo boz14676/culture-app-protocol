@@ -11,7 +11,7 @@
   	"enum":
   	{
         // 主题类型
-        "ACTIVITIABLE_TYPE": {
+        "COMMENTABLE_TYPE": {
             "ARTICLE": "article",                        // 文章下面的评论
             "ACTIVITY": "activity",                      // 活动下面的评论
             "VIDEO": "video"                             // 视频下面的评论
@@ -27,15 +27,15 @@
         },
 
         // 活动对象
-        "ACTIVITY": {
+        "COMMENT": {
             "id": 1,
             "original_user": "{USER}",                       // 用户对象
             "details": "",                                   // 内容
             "created_at": "",                                // 新增时间
             "has_liked_number": "",                          // 被赞数量
 
-            "acitivitiable_type": "<ACTIVITIABLE_TYPE>",    // 主题类型 *仅用于搜索时使用
-            "acitivitiable_id": ""                          // 主题ID *仅用于搜索时使用
+            "commentable_type": "<COMMENTABLE_TYPE>",    // 主题类型 *仅用于搜索时使用
+            "commentable_id": ""                          // 主题ID *仅用于搜索时使用
         }
     },
 
@@ -45,7 +45,7 @@
         "GET /v1/comments":
         {
             "request":
-            {   
+            {
                 "page": "1",                             // *当前页数
                 "per_page": "10",                        // *每页显示的数量
                 "q[attribute_name]": "",                 // 搜索
@@ -53,7 +53,21 @@
             },
             "response":
             {
-                "data": ["{ACTIVITY}"]
+                "data": ["{COMMENT}"]
+            }
+        },
+
+        // 获取用户的评论(s)
+        "GET /v1/user/comments":
+        {
+            "request":
+            {
+                "page": "1",                             // *当前页数
+                "per_page": "10"                         // *每页显示的数量
+            },
+            "response":
+            {
+                "data": ["{COMMENT}"]
             }
         },
     }
