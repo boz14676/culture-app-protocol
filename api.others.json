@@ -44,7 +44,6 @@
         {
             "request":
             {
-                "article_category_id": 1, // *文章分类ID
                 "numbers": 6              // 显示数量（默认为6）
             },
             "response":

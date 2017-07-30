@@ -1,0 +1,97 @@
+//
+//       _/_/_/                      _/            _/_/_/_/_/
+//    _/          _/_/      _/_/    _/  _/              _/      _/_/      _/_/
+//   _/  _/_/  _/_/_/_/  _/_/_/_/  _/_/              _/      _/    _/  _/    _/
+//  _/    _/  _/        _/        _/  _/          _/        _/    _/  _/    _/
+//   _/_/_/    _/_/_/    _/_/_/  _/    _/      _/_/_/_/_/    _/_/      _/_/
+//
+//
+//  Copyright (c) 2016-2017, Geek Zoo Studio
+//  http://www.geek-zoo.com
+//
+
+/**
+ * improt
+ *      - api.payment as PAYMENT
+ */
+
+{
+    "meta":
+    {
+        "title": "Culture API",
+        "output": "order-api",
+        "author": "Taylor",
+        "source": "none",
+        "prefix": ""
+    },
+
+    "enum":
+    {
+        // 订单状态
+        "ORDER_STATUS": {
+            "canceled": -1,  // 已取消
+            "wait_pay": 0,   // 等待支付
+            "paid": 1        // 已支付=已预订
+        }
+    },
+
+    "model":
+    {
+        // 订单对象
+        "ORDER": {
+            "serial_number": "",                        // 订单编号
+            "status": "<ORDER_STATUS>",                 // 订单状态
+            "type": "<ORDER_TYPE>",                     // 订单类型
+            "goods_price": "",                          // 商品单价
+            "goods_numbers": "",                        // 商品数量
+            "amount": "",                               // 订单总金额
+            "pay_serial_number": "",                    // 第三方交易编号
+            "payment_type": "<PAYMENT.PAYMENT_TYPE>",   // 支付方式
+
+            "expire_time": "",                          // 过期的时间戳（*下单操作中存在）
+
+            "paid_at": "",                              // 支付时间
+            "created_at": "",                           // 下单时间
+
+            "booking_person_name": "",                  // 预约人姓名
+            "booking_person_mobile": "",                // 预约人电话
+
+            "original_activity": "{ACTIVITY}"           // 活动 对象
+        },
+
+        // 活动对象
+        "ACTIVITY": {
+            "id": 1,
+            "name": "",                 // 名称
+            "thumbnail": "",            // 缩略图
+            "address": "",              // 地址
+            "registered_at": []         // 活动的开始和结束时间
+        }
+    },
+
+    "controller":
+    {
+        // 获取订单 *token_needed
+        "GET /order/:id":
+        {
+            "request": {
+            },
+            "response": {
+                "order": "{ORDER}"
+            }
+        },
+
+        // 订单列表 *token_needed
+        "GET /orders":
+        {
+            "request": {
+                "page": "",
+                "per_page": "",
+                "status": "<ORDER_STATUS>"
+            },
+            "response": {
+                "orders": "{ORDER}"
+            }
+        }
+    }
+}

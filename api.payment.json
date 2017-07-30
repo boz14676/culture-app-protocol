@@ -1,0 +1,72 @@
+//
+//       _/_/_/                      _/            _/_/_/_/_/
+//    _/          _/_/      _/_/    _/  _/              _/      _/_/      _/_/
+//   _/  _/_/  _/_/_/_/  _/_/_/_/  _/_/              _/      _/    _/  _/    _/
+//  _/    _/  _/        _/        _/  _/          _/        _/    _/  _/    _/
+//   _/_/_/    _/_/_/    _/_/_/  _/    _/      _/_/_/_/_/    _/_/      _/_/
+//
+//
+//  Copyright (c) 2016-2017, Geek Zoo Studio
+//  http://www.geek-zoo.com
+//
+
+/**
+ * improt
+ *      - api.shopping_order
+ */
+
+{
+    "meta": {
+        "title": "国贸-支付相关",
+        "output": "park-api",
+        "author": "Geek-Zoo Studio",
+        "source": "none",
+        "prefix": "ParkviewGreen"
+    },
+
+    "enum": {
+        // 支付方式
+        "PAYMENT_TYPE": {
+            "ALIPAY_WEB": "alipay_web", // 支付宝网页支付
+            "WXPAY_WEB": "wxpay_web"    // 微信公众号支付
+        }
+    },
+
+    "model": {
+
+        // 微信支付结构体
+        "WXPAY_CONFIG": {
+            "app_id": "",
+            "time_stamp": "",
+            "nonce_str": "",
+            "package": "",
+            "sign_type": "",
+            "pay_sign": ""
+        },
+
+        "PAYS": {
+            "payment_type": "<PAYMENT_TYPE>",        // 支付类型
+            "weipay": {
+                "config_data": "{PAYMENT.WXPAY_CONFIG}", // 返回支付配置
+                "openid_needed": 1                       // 是否需要openid [type: boolean]
+            },
+            "alipay": {
+                "html": "" // 支付宝返回的HTML页面
+            }
+        }
+    },
+
+    "controller": {
+
+        // 支付方式
+        "POST /api.payment.list": {
+            "request": {
+            },
+            "response": {
+                "payments": ["<PAYMENT_TYPE>"]
+            }
+        },
+
+
+    }
+}

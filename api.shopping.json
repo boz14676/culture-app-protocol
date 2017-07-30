@@ -1,0 +1,109 @@
+//
+//       _/_/_/                      _/            _/_/_/_/_/
+//    _/          _/_/      _/_/    _/  _/              _/      _/_/      _/_/
+//   _/  _/_/  _/_/_/_/  _/_/_/_/  _/_/              _/      _/    _/  _/    _/
+//  _/    _/  _/        _/        _/  _/          _/        _/    _/  _/    _/
+//   _/_/_/    _/_/_/    _/_/_/  _/    _/      _/_/_/_/_/    _/_/      _/_/
+//
+//
+//  Copyright (c) 2016-2017, Geek Zoo Studio
+//  http://www.geek-zoo.com
+//
+
+/**
+ * improt
+ *      - api.payment as PAYMENT
+ */
+
+{
+    "meta":
+    {
+        "title": "Culture API",
+        "output": "shopping-api",
+        "author": "Taylor",
+        "source": "none",
+        "prefix": ""
+    },
+
+    "enum":
+    {
+        // 订单状态
+        "ORDER_STATUS": {
+            "canceled": -1,  // 已取消
+            "wait_pay": 0,   // 等待支付
+            "paid": 1        // 已支付=已预订
+        }
+    },
+
+    "model":
+    {
+        // 订单详情对象order_serial_number
+        "ORDER": {
+            "serial_number": "",                        // 订单编号
+            "status": "<ORDER_STATUS>",                 // 订单状态
+            "type": "<ORDER_TYPE>",                     // 订单类型
+            "goods_price": "",                          // 商品单价
+            "goods_numbers": "",                        // 商品数量
+            "amount": "",                               // 订单总金额
+            "pay_serial_number": "",                    // 第三方交易编号
+            "payment_type": "<PAYMENT.PAYMENT_TYPE>",   // 支付方式
+
+            "expire_time": "",                          // 过期的时间戳（*下单操作中存在）
+
+            "paid_at": "",                              // 支付时间
+            "created_at": "",                           // 下单时间
+
+            "booking_person_name": "",                  // 预约人姓名
+            "booking_person_mobile": "",                // 预约人电话
+
+            "activity": "{ACTIVITY}"                    // 活动 对象
+        },
+
+        // 活动对象
+        "ACTIVITY": {
+            "id": 1,
+            "name": "",                 // 名称
+            "thumbnail": "",            // 缩略图
+            "address": "",              // 地址
+            "registered_at": []         // 活动的开始和结束时间
+        },
+
+        // 订单列表对象
+        "ORDER_LIST": {
+            "goods_name": "",                 // 商品名称
+            "goods_thumbnail": "",            // 商品缩略图
+            "goods_price": "",                // 商品单价
+            "status": "<ORDER_STATUS>",       // 订单状态
+            "created_at": ""                  // 下单时间
+        }
+    },
+
+    "controller":
+    {
+        // 购买商品（预约） *token_needed
+        "POST /shopping/orders":
+        {
+            "request": {
+                "goods_id": "{ACTIVITY.id}",            // 活动 对象的 ID
+                "goods_numbers": "",                    // 购买的商品数量
+                "extra.booking_person_name": "",        // 预约人姓名
+                "extra.booking_person_mobile": ""       // 预约人手机号
+            },
+            "response": {
+                "order"    : "{ORDER}"
+            }
+        },
+
+        // 支付团购商品 *token_needed
+        "POST /shopping/pays":
+        {
+            "request": {
+                "order_id": "{ORDER.id}",                    // 订单ID
+                "openid": "openid",                          // 当支付类型为<PAYMENT_TYPE.WXPAY_WEB>时此字段为必填
+                "payment_type": "{PAYMENT.PAYMENT_TYPE}",    // 支付类型
+                "referer_url": ""                            // 当支付类型为<PAYMENT_TYPE.ALIPAY_WEB>时此字段为必填
+            },
+            "response": "{PAYMENT.PAYS}"
+        }
+    }
+}
