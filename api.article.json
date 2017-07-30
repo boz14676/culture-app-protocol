@@ -16,8 +16,8 @@
             "DESC": "desc"  // desc
         },
 
-        // 文章分类 类型
-        "ARTILCE_CATEGORY_TYPE": {
+        // 文章列表展示类型
+        "SHOWING_TYPE_LIST": {
             "ONE": 1,
             "TWO": 2,
             "THREE": 3,
@@ -26,6 +26,14 @@
             "SIX": 6,
             "SEVEN": 7,
             "EIGHT": 8
+        },
+
+        // 文章详情展示类型
+        "SHOWING_TYPE_INFOR": {
+            "ONE": 1,
+            "TWO": 2,
+            "THREE": 3,
+            "FOUR": 4
         }
 
   	},
@@ -35,12 +43,13 @@
         // 文章分类 对象
         "ARTICLE_CATEGORY": {
             "id": 1,
-            "topid": 0,                           // 上级ID
-            "type": "<ARTILCE_CATEGORY_TYPE>",    // 类型
-            "name": "",                           // 名称
-            "desc": "",                           // 简介
+            "topid": 0,                                     // 上级ID
+            "showing_type_list": "<SHOWING_TYPE_LIST>",     // 文章列表展示类型
+            "showing_type_infor": "<SHOWING_TYPE_INFOR>",   // 文章详情展示类型
+            "name": "",                                     // 名称
+            "desc": "",                                     // 简介
 
-            "is_top_showing": 0                   // 是否展示在首页 [type: boolean(0, 1)] *仅用于首页展示使用
+            "is_top_showing": 0                             // 是否展示在首页 [type: boolean(0, 1)] *仅用于首页展示使用
         },
 
         // 文化场馆 详情
@@ -53,34 +62,35 @@
         // 文章 对象
         "ARTICLE": {
             "id": 1,
-            "article_category_id": 1,               // 文章分类ID
-            "name": "",                             // 名称（包含：姓名）
-            "thumbnail": "",                        // 缩略图（包含：大师头像）
-            "banner": "",                           // banner（包含：背景图）
-            "photos": "",                           // 图片（包含：藏品图片）
-            "label": [],                            // 标签
+            "original_article_category": "{ARTICLE_CATEGORY}",  // 文章分类 对象
+            "article_category_id": 1,                           // 文章分类ID
+            "name": "",                                         // 名称（包含：姓名）
+            "thumbnail": "",                                    // 缩略图（包含：大师头像）
+            "banner": "",                                       // banner（包含：背景图）
+            "photos": "",                                       // 图片（包含：藏品图片）
+            "label": [],                                        // 标签
 
-            "location": "116.421516,39.897224",     // 坐标
-            "address": "",                          // 位置
-            "desc": "",                             // 用于：内容描述、专题简介、内容年代、主题、个人简介
-            "client_timed_at": "",                  // 时间
+            "location": "116.421516,39.897224",                 // 坐标
+            "address": "",                                      // 位置
+            "desc": "",                                         // 用于：内容描述、专题简介、内容年代、主题、个人简介
+            "client_timed_at": "",                              // 时间
 
-            "activity_numbers": 2,                  // 活动数量
+            "activity_numbers": 2,                              // 活动数量
 
-            "distance": 200,                        // 距离（m）*仅做排序使用属性
+            "distance": 200,                                    // 距离（m）*仅做排序使用属性
 
-            "is_hot": 0,                            // 是否热门 [type: boolean(0, 1)] *仅做搜索使用的属性
+            "is_hot": 0,                                        // 是否热门 [type: boolean(0, 1)] *仅做搜索使用的属性
 
-            "comment_numbers": 100,                 // 评论数量 *可用作做排序使用的属性
-            "like_numbers": 100,                    // 点赞数量 *可用作排序使用的属性
+            "comment_numbers": 100,                             // 评论数量 *可用作做排序使用的属性
+            "like_numbers": 100,                                // 点赞数量 *可用作排序使用的属性
 
-            "reading_numbers": 100,                 // 阅读数量 *仅做排序使用的属性
+            "reading_numbers": 100,                             // 阅读数量 *仅做排序使用的属性
 
-            "is_guess": 0,                          // 猜你喜欢 [type: boolean(0, 1)] *仅做搜索使用的属性
+            "is_guess": 0,                                      // 猜你喜欢 [type: boolean(0, 1)] *仅做搜索使用的属性
 
-            "details": "",                          // 内容
+            "details": "",                                      // 内容
 
-            "extra": "{VENUE_INFOR}|''"             // 扩展字段 [type: mixed] *可用于文化场馆的详情信息
+            "extra": "{VENUE_INFOR}|''"                         // 扩展字段 [type: mixed] *可用于文化场馆的详情信息
         },
 
         // 图片对象
