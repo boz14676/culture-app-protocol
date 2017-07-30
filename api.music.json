@@ -2,7 +2,7 @@
     "meta":
     {
         "title"     : "Culture API",
-        "output"    : "video-api",
+        "output"    : "music-api",
         "author"    : "Taylor",
         "source"    : "none",
         "prefix"    : ""
@@ -11,7 +11,7 @@
   	"enum":
   	{
         // 主题类型
-        "VIDEOABLE_TYPE": {
+        "MUSICABLE_TYPE": {
             "ARTICLE_CATEGORY": "article_category",     // 文章列表主题
             "ARTICLE": "article"                        // 文章主题
         }
@@ -20,11 +20,13 @@
     "model":
     {
         // 视频对象
-        "VIDEO": {
+        "MUSIC": {
             "id": "",
             "name": "",                             // 名称
             "thumbnail": "",                        // 缩略图
-            "url": "",                              // 视频地址
+            "url": "",                              // 地址
+            "lenstening_numbers": "",               // 观看次数
+            "singer_name": "",                      // 歌手名称
 
             "videoable_type": "<VIDEOABLE_TYPE>",   // 主题类型 *仅用于搜索时使用
             "videoable_id": ""                      // 主题ID *仅用于搜索时使用
@@ -34,7 +36,7 @@
     "controller":
     {
         // 获取视频(s)
-        "GET /v1/videos":
+        "GET /v1/musics":
         {
             "request":
             {
@@ -45,7 +47,7 @@
             },
             "response":
             {
-                "data": ["{VIDEO}"]
+                "data": ["{MUSIC}"]
             }
         }
     }
