@@ -34,6 +34,15 @@
             "thumbnail": "", // 缩略图
             "extra": "",     // 用于：人气
             "url": ""        // 跳转链接
+        },
+
+        // 地区 对象
+        "AREA": {
+            "id": 1,
+            "name": "",         // 名称
+            "region": "",       // 大区名称
+
+            "parent_id": 24     // 上一级区域ID，默认为贵州省(id: 24)
         }
     },
 
@@ -64,6 +73,19 @@
                 "data": [
                     {"<ADR>": "{HOME_SECTION_ITEM}"}
                 ]
+            }
+        },
+
+        // 获取地区(s)
+        "GET /v1/areas":
+        {
+            "request":
+            {
+                "q[parent_id]": 24 // 搜索（上一级地区ID）
+            },
+            "response":
+            {
+                "data": ["{AREA}"]
             }
         }
     }
