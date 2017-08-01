@@ -1,0 +1,45 @@
+{
+    "meta":
+    {
+        "title"     : "Culture API",
+        "output"    : "comment-api",
+        "author"    : "Taylor",
+        "source"    : "none",
+        "prefix"    : ""
+    },
+
+  	"enum":
+  	{
+        // 积分任务对象类型
+        "INTEGRAL_TASKS_TYPE": {
+            "FIRST_TIME": 1, // 首次
+            "EVERY_DAY": 2   // 每日
+        }
+  	},
+
+    "model":
+    {
+        // 积分任务对象
+        "INTEGRAL_TASKS": {
+            "id": 0,
+            "name": "",                          // 名称
+            "type": "<INTEGRAL_TASKS_TYPE>",     // 任务类型
+            "quantity": 100                      // 积分量
+        }
+    },
+
+    "controller":
+    {
+        // 获取积分任务(s) *token
+        "GET /v1/integral_tasks":
+        {
+            "request":
+            {
+            },
+            "response":
+            {
+                "data": "{INTEGRAL_TASKS}"
+            }
+        }
+    }
+}
