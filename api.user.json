@@ -15,6 +15,13 @@
              "0": "保密",
              "1": "男",
              "2": "女"
+        },
+
+        // 用户实名认证状态
+        "IDENTiFICATION_STATUS": {
+            "unsubmit": 0,  // 未提交申请
+            "wait": 1,      // 等待管理员审核
+            "passed": 2     // 审核通过
         }
     },
 
@@ -22,11 +29,11 @@
     {
         // 用户对象
         "USER": {
-            "nickname": "",           // 用户昵称
-            "avatar": "",             // 用户头像(URL)
-            "integral_quantities": "",  // 积分
-            "is_bind": "",            // 是否绑定 [type: boolean(0,1)]
-            "is_identification": "",  // 是否认证 [type: boolean(0,1)]
+            "nickname": "",                                         // 用户昵称
+            "avatar": "",                                           // 用户头像(URL)
+            "integral_quantities": "",                              // 积分
+            "is_bind": "",                                          // 是否绑定 [type: boolean(0,1)]
+            "identification_status": "<IDENTiFICATION_STATUS>",     // 认证状态
 
             // 数量统计
             "numbers_count": {
@@ -129,11 +136,25 @@
             }
         },
 
-        // 修改用户资料
+        // 修改用户资料 *token_needed
         "POST /v1/user/profile/update":
         {
             "request": {
                 "nickname": "" // 昵称
+            },
+            "response":
+            {
+                "error_code"    : "<ERROR_CODE>",       // 错误代码
+                "error_desc"    : "错误描述"             // 错误描述
+            }
+        },
+
+        // 提交实名认证 *token_needed
+        "POST /v1/user/identification":
+        {
+            "request": {
+                "name": "",         // 名称
+                "id_number": ""     // 身份证ID
             },
             "response":
             {
