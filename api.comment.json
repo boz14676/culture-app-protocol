@@ -10,11 +10,17 @@
 
   	"enum":
   	{
+        // 排序方式
+        "SORT_ORDER": {
+            "ASC": "asc",   // asc
+            "DESC": "desc"  // desc
+        },
+
         // 主题类型
         "COMMENTABLE_TYPE": {
-            "ARTICLE": "article",                        // 文章下面的评论
-            "ACTIVITY": "activity",                      // 活动下面的评论
-            "VIDEO": "video"                             // 视频下面的评论
+            "ARTICLE": "article",                        // 文章 评论
+            "ACTIVITY": "activity",                      // 活动 评论
+            "VIDEO": "video"                             // 视频 评论
         }
   	},
 
@@ -33,6 +39,8 @@
             "details": "",                                  // 内容
             "created_at": "",                               // 新增时间
             "has_liked_number": "",                         // 被赞数量
+
+            "is_cur_user_liked": 1,                         // 是否被当前用户点过赞
 
             "commentable_type": "<COMMENTABLE_TYPE>",       // 主题类型 *可用于搜索时使用
             "commentable_id": ""                            // 主题ID *可用于搜索时使用
@@ -85,6 +93,6 @@
                 "error_code"    : "<ERROR_CODE>",       // 错误代码
                 "error_desc"    : "错误描述"             // 错误描述
             }
-        },
+        }
     }
 }
