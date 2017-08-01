@@ -2,7 +2,7 @@
     "meta":
     {
         "title"     : "Culture API",
-        "output"    : "comment-api",
+        "output"    : "",
         "author"    : "Taylor",
         "source"    : "none",
         "prefix"    : ""
@@ -39,7 +39,7 @@
     "controller":
     {
         // 获取积分任务(s) *token
-        "GET /v1/integral_tasks":
+        "GET /v1/user/integral_tasks":
         {
             "request":
             {
