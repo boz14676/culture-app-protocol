@@ -24,6 +24,7 @@
         "USER": {
             "nickname": "",           // 用户昵称
             "avatar": "",             // 用户头像(URL)
+            "integral_quantities": "",  // 积分
             "is_bind": "",            // 是否绑定 [type: boolean(0,1)]
             "is_identification": "",  // 是否认证 [type: boolean(0,1)]
 
@@ -36,7 +37,7 @@
                 "enshrine": 0,          // 收藏数量
                 "comment": 0            // 评论数量
             },
-            "token": ""               // TOKEN
+            "token": ""                 // TOKEN
         }
     },
 

@@ -24,7 +24,15 @@
             "id": 0,
             "name": "",                          // 名称
             "type": "<INTEGRAL_TASKS_TYPE>",     // 任务类型
-            "quantity": 100                      // 积分量
+            "quantities": 100                    // 积分量
+        },
+
+        // 积分对象
+        "INTEGRALS": {
+            "id": 0,
+            "name": "",                          // 名称
+            "quantities": 100,                   // 积分量
+            "created_at": "2017-08-01"           // 增加积分时间
         }
     },
 
@@ -39,6 +47,18 @@
             "response":
             {
                 "data": "{INTEGRAL_TASKS}"
+            }
+        },
+
+        // 获取用户积分记录(s) *token
+        "GET /v1/user/integrals":
+        {
+            "request":
+            {
+            },
+            "response":
+            {
+                "data": "{INTEGRALS}"
             }
         }
     }
