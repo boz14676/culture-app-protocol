@@ -161,6 +161,19 @@
                 "error_code"    : "<ERROR_CODE>",       // 错误代码
                 "error_desc"    : "错误描述"             // 错误描述
             }
+        },
+
+        // 意见反馈 *token_needed
+        "POST /v1/user/feedback":
+        {
+            "request": {
+                "details": ""         // 内容
+            },
+            "response":
+            {
+                "error_code"    : "<ERROR_CODE>",       // 错误代码
+                "error_desc"    : "错误描述"             // 错误描述
+            }
         }
     }
 }
