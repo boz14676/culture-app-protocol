@@ -91,8 +91,8 @@
             "is_music": 0,                                      // 是否有音乐 [type: boolean(0, 1)]
             "is_video": 0,                                      // 是否有视频 [type: boolean(0, 1)]
 
-            "comment_numbers": 100,                             // 评论数量 *可用作做排序使用的属性
-            "like_numbers": 100,                                // 点赞数量 *可用作排序使用的属性
+            "has_commented_numbers": 100,                       // 评论数量 *可用作做排序使用的属性
+            "has_liked_numbers": 100,                           // 点赞数量 *可用作排序使用的属性
 
             "reading_numbers": 100,                             // 阅读数量 *仅做排序使用的属性
 

@@ -2,7 +2,7 @@
     "meta":
     {
         "title"     : "Culture API",
-        "output"    : "comment-api",
+        "output"    : "user_like-api",
         "author"    : "Taylor",
         "source"    : "none",
         "prefix"    : ""
@@ -12,10 +12,10 @@
   	{
         // 主题类型
         "LIKESABLE_TYPE": {
-            "ARTICLE": "article",                        // 文章 点赞
-            "ACTIVITY": "activity",                      // 活动 点赞
-            "VIDEO": "video",                            // 视频 点赞
-            "COMMENT": "comment"                         // 评论 点赞
+            "ARTICLE": "article",                        // 文章 主题
+            "ACTIVITY": "activity",                      // 活动 主题
+            "VIDEO": "video",                            // 视频 主题
+            "COMMENT": "comment"                         // 评论 主题
         }
 
   	},

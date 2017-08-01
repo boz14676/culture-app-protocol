@@ -18,9 +18,9 @@
 
         // 主题类型
         "COMMENTABLE_TYPE": {
-            "ARTICLE": "article",                        // 文章 评论
-            "ACTIVITY": "activity",                      // 活动 评论
-            "VIDEO": "video"                             // 视频 评论
+            "ARTICLE": "article",                        // 文章 主题
+            "ACTIVITY": "activity",                      // 活动 主题
+            "VIDEO": "video"                             // 视频 主题
         }
   	},
 
