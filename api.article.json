@@ -43,7 +43,6 @@
         // 文章分类 对象
         "ARTICLE_CATEGORY": {
             "id": 1,
-            "topid": 0,                                     // 上级ID
             "showing_type_list": "<SHOWING_TYPE_LIST>",     // 文章列表展示类型
             "showing_type_infor": "<SHOWING_TYPE_INFOR>",   // 文章详情展示类型
             "name": "",                                     // 名称
@@ -51,24 +50,14 @@
             "banner": "",                                   // banner
             "desc": "",                                     // 简介
 
-            "is_music": 0,                                  // 是否有音乐 [type: boolean(0, 1)]
-            "is_video": 0,                                  // 是否有视频 [type: boolean(0, 1)]
-            "is_activity": 1,                               // 是否有预约 [type: boolean(0, 1)]
-
+            /************************************ 搜索属性 ************************************/
+            "topid": 0,                                     // 上级ID
             "is_top_showing": 0                             // 是否展示在首页 [type: boolean(0, 1)] *仅用于首页展示使用
-        },
-
-        // 文化场馆 详情
-        "VENUE_INFOR": {
-            "opening_hours": "",  // 营业时间
-            "contact": "",        // 联系方式
-            "transport": ""       // 公共交通
         },
 
         // 文章 对象
         "ARTICLE": {
             "id": 1,
-
 
             "original_article_category": "{ARTICLE_CATEGORY}",  // 文章分类 对象
             "name": "",                                         // 名称（包含：姓名）
@@ -83,15 +72,17 @@
             "desc": "",                                         // 用于：内容描述、专题简介、内容年代、主题、个人简介
             "client_timed_at": "",                              // 时间
 
-            "activity_numbers": 2,                              // 活动数量
+            "has_activity_numbers": 2,                          // 活动数量
 
-            "has_videos": 0,                                     // 是否有视频 [type: boolean(0, 1)]
-            "has_photos": 0,                                     // 是否有视频 [type: boolean(0, 1)]
+            "has_videos": 0,                                    // 是否有视频 [type: boolean(0, 1)]
+            "has_photos": 0,                                    // 是否有视频 [type: boolean(0, 1)]
 
             "details": "",                                      // 内容
             "extra": "{VENUE_INFOR}|''",                        // 扩展字段 [type: mixed] *可用于文化场馆的详情信息
 
             /************************************ 排序属性 ************************************/
+            "distance": "asc",                                  // 距离排序 *仅用作做排序使用的属性
+
             "has_commented_numbers": 100,                       // 评论数量 *可用作做排序使用的属性
             "has_liked_numbers": 100,                           // 点赞数量 *可用作排序使用的属性
             "has_read_numbers": 100,                            // 阅读数量 *仅做排序使用的属性
@@ -103,19 +94,6 @@
             "is_guess": 0                                       // 猜你喜欢 [type: boolean(0, 1)] *仅做搜索使用的属性
 
 
-        },
-
-        // 图片对象
-        "PHOTO": {
-            "id": "",
-            "name": "",                    // 名称
-            "url": {
-                "thumb": "",               // 缩略图
-                "large": ""                // 原生图
-            },
-
-            "imageable_type": "article",   // 搜索的主题，默认为article *仅用于搜索时使用
-            "imageable_id": ""             // 主题ID *仅用于搜索时使用
         }
     },
 
@@ -129,7 +107,6 @@
                 "q[attribute_name]": "",  // 搜索
                 "s[attribute_name]": "",  // 排序
 
-                "q[topid]": 0,            // 上一级ID，没有为0
                 "numbers": ""             // 显示数量，不传则返回全部
             },
             "response":
@@ -167,20 +144,6 @@
             "response":
             {
                 "data": "{ARTICLE}"
-            }
-        },
-
-        // 获取热搜(s)
-        "GET /v1/hotsearches":
-        {
-            "request":
-            {
-                "article_category_id": 1, // *文章分类ID
-                "numbers": 6              // 显示数量（默认为6）
-            },
-            "response":
-            {
-                "data": ["{HOTSEARCH}"]
             }
         }
     }

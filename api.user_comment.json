@@ -41,10 +41,7 @@
             "created_at": "",                               // 新增时间
             "has_liked_number": "",                         // 被赞数量
 
-            "is_cur_user_liked": 1,                         // 是否被当前用户点过赞
-
-            "commentable_type": "<COMMENTABLE_TYPE>",       // 主题类型 *可用于搜索时使用
-            "commentable_id": ""                            // 主题ID *可用于搜索时使用
+            "is_cur_user_liked": 1                          // 是否被当前用户点过赞
         }
     },
 
@@ -55,10 +52,11 @@
         {
             "request":
             {
-                "page": "1",                             // *当前页数
-                "per_page": "10",                        // *每页显示的数量
-                "q[attribute_name]": "",                 // 搜索
-                "s[attribute_name]": "<SORT_ORDER>"      // 排序
+                "page": "1",                                        // *当前页数
+                "per_page": "10",                                   // *每页显示的数量
+
+                "q[commentable_type]": "<COMMENTABLE_TYPE>",        // 主题类型
+                "q[commentable_id]": ""                             // 主题ID
             },
             "response":
             {
@@ -66,7 +64,7 @@
             }
         },
 
-        // 获取用户的评论(s) *token_needed
+        // 获取用户写的评论(s) *token_needed
         "GET /v1/user/comments":
         {
             "request":

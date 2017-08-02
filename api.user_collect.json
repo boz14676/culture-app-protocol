@@ -2,6 +2,7 @@
  * improt
  *      - api.article
  *      - api.activity
+ *      - api.video
  */
 {
     "meta":
@@ -19,7 +20,8 @@
         "COLLECTABLE_TYPE": {
             "ARTICLE": "article",                        // 文章 主题
             "ACTIVITY": "activity",                      // 活动 主题
-            "VIDEO": "video"                             // 视频 主题
+            "VIDEO": "video",                            // 视频 主题
+            "STADIUM": "stadium"                         // 场馆 主题
         }
 
   	},
@@ -29,23 +31,39 @@
         // 收藏对象
         "COLLECT": {
             "id": 1,
-            "collectable_type": "<COLLECTABLE_TYPE>",         // 主题类型
-            "collectable_id": "",                             // 主题ID
-
             "original_article": "{ARTILCE}",                  // 文章对象 *`collectable_type` 为 `article` 时存在
             "original_activity": "{ACTIVITY}",                // 活动对象 *`collectable_type` 为 `activity` 时存在
-            "original_video": "{VIDEO}"                       // 视频对象 *`collectable_type` 为 `video` 时存在
+            "original_video": "{VIDEO}",                      // 视频对象 *`collectable_type` 为 `video` 时存在
+
+            "collectable_type": "<COLLECTABLE_TYPE>",         // 主题类型
+            "collectable_id": ""                              // 主题ID
         }
     },
 
     "controller":
     {
+        // 获取用户的收藏(s) *token_needed
+        "GET /v1/user/collects": {
+            "request":
+            {
+                "page": "1",                                    // *当前页数
+                "per_page": "10",                               // *每页显示的数量
+
+                "q[collectable_type]": "<COLLECTABLE_TYPE>",    // 主题类型
+                "q[collectable_id]": ""                         // 主题ID
+            },
+            "response":
+            {
+                "data": ["{COLLECT}"]
+            }
+        },
+
         // 用户对主题（文章、预约、视频）收藏 *token_needed
         "POST /v1/user/collect":
         {
             "request":
             {
-                "collectable_type": "<COMMENTABLE_TYPE>",       // 主题类型
+                "collectable_type": "<COLLECTABLE_TYPE>",       // 主题类型
                 "collectable_id": ""                            // 主题ID
             },
             "response":
@@ -60,28 +78,13 @@
         {
             "request":
             {
-                "collectable_type": "<COMMENTABLE_TYPE>",       // 主题类型
+                "collectable_type": "<COLLECTABLE_TYPE>",       // 主题类型
                 "collectable_id": ""                            // 主题ID
             },
             "response":
             {
                 "error_code"    : "<ERROR_CODE>",       // 错误代码
                 "error_desc"    : "错误描述"             // 错误描述
-            }
-        },
-
-        // 获取用户的收藏(s) *token_needed
-        "GET /v1/user/collects": {
-            "request":
-            {
-                "page": "1",                          // *当前页数
-                "per_page": "10",                     // *每页显示的数量
-                "s[attribute_name]": "<SORT_ORDER>",  // 排序
-                "q[attribute_name]": ""               // 搜索
-            },
-            "response":
-            {
-                "data": ["{COLLECT}"]
             }
         }
     }
