@@ -12,8 +12,9 @@
   	{
         // 主题类型
         "VIDEOABLE_TYPE": {
-            "ARTICLE_CATEGORY": "article_category",     // 文章列表主题
-            "ARTICLE": "article"                        // 文章主题
+            "ARTICLE_CATEGORY": "article_category",      // 文章列表主题
+            "ARTICLE": "article",                        // 文章主题
+            "STADIUM": "stadium"                         // 文化场馆
         }
   	},
 

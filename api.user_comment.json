@@ -18,9 +18,10 @@
 
         // 主题类型
         "COMMENTABLE_TYPE": {
-            "ARTICLE": "article",                        // 文章 主题
-            "ACTIVITY": "activity",                      // 活动 主题
-            "VIDEO": "video"                             // 视频 主题
+            "ARTICLE": "article",                        // 文章
+            "ACTIVITY": "activity",                      // 活动
+            "STADIUM": "stadium",                        // 文化场馆
+            "VIDEO": "video"                             // 视频
         }
   	},
 
@@ -32,7 +33,7 @@
             "avatar": ""              // 用户头像(URL)
         },
 
-        // 活动对象
+        // 评论对象
         "COMMENT": {
             "id": 1,
             "original_user": "{USER}",                      // 用户对象

@@ -12,10 +12,11 @@
   	{
         // 主题类型
         "LIKESABLE_TYPE": {
-            "ARTICLE": "article",                        // 文章 主题
-            "ACTIVITY": "activity",                      // 活动 主题
-            "VIDEO": "video",                            // 视频 主题
-            "COMMENT": "comment"                         // 评论 主题
+            "ARTICLE": "article",                        // 文章
+            "STADIUM": "stadium",                        // 文化场馆
+            "ACTIVITY": "activity",                      // 活动
+            "VIDEO": "video",                            // 视频
+            "COMMENT": "comment"                         // 评论
         }
 
   	},

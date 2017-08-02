@@ -126,8 +126,10 @@
         {
             "request":
             {
-                "topid": 0,               // 上一级ID，没有为0
                 "q[attribute_name]": "",  // 搜索
+                "s[attribute_name]": "",  // 排序
+
+                "q[topid]": 0,            // 上一级ID，没有为0
                 "numbers": ""             // 显示数量，不传则返回全部
             },
             "response":
