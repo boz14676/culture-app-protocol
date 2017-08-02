@@ -69,7 +69,6 @@
         "ARTICLE": {
             "id": 1,
             "original_article_category": "{ARTICLE_CATEGORY}",  // 文章分类 对象
-            "article_category_id": 1,                           // 文章分类ID
             "name": "",                                         // 名称（包含：姓名）
             "thumbnail": "",                                    // 缩略图（包含：大师头像）
             "banner": "",                                       // banner（包含：背景图）
@@ -95,7 +94,7 @@
             "has_commented_numbers": 100,                       // 评论数量 *可用作做排序使用的属性
             "has_liked_numbers": 100,                           // 点赞数量 *可用作排序使用的属性
 
-            "reading_numbers": 100,                             // 阅读数量 *仅做排序使用的属性
+            "has_readed_numbers": 100,                          // 阅读数量 *仅做排序使用的属性
 
             "is_guess": 0,                                      // 猜你喜欢 [type: boolean(0, 1)] *仅做搜索使用的属性
 

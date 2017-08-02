@@ -41,7 +41,6 @@
         "STADIUMS": {
             "id": 1,
             "original_article_category": "{ARTICLE_CATEGORY}",  // 文章分类 对象
-            "article_category_id": 1,                           // 文章分类ID
             "name": "",                                         // 名称
             "thumbnail": "",                                    // 缩略图
             "banner": "",                                       // banner（包含：背景图）
@@ -58,8 +57,8 @@
 
             "distance": 200,                                    // 距离（m）*仅做排序使用属性
 
-            "has_photos": 0,                                     // 是否有音乐 [type: boolean(0, 1)]
-            "has_videos": 0,                                     // 是否有视频 [type: boolean(0, 1)]
+            "has_photos": 0,                                    // 是否有音乐 [type: boolean(0, 1)]
+            "has_videos": 0,                                    // 是否有视频 [type: boolean(0, 1)]
 
             "has_commented_numbers": 100,                       // 评论数量 *可用作做排序使用的属性
             "has_liked_numbers": 100,                           // 点赞数量 *可用作排序使用的属性
@@ -67,25 +66,12 @@
             "reading_numbers": 100,                             // 阅读数量 *仅做排序使用的属性
 
             "details": ""                                       // 内容
-        },
-
-        // 图片对象
-        "PHOTO": {
-            "id": "",
-            "name": "",                    // 名称
-            "url": {
-                "thumb": "",               // 缩略图
-                "large": ""                // 原生图
-            },
-
-            "imageable_type": "article",   // 搜索的主题，默认为article *仅用于搜索时使用
-            "imageable_id": ""             // 主题ID *仅用于搜索时使用
         }
     },
 
     "controller":
     {
-        // 获取文章(s)
+        // 获取场馆(s)
         "GET /v1/stadiums":
         {
             "request":
@@ -105,7 +91,7 @@
             }
         },
 
-        // 获取文章
+        // 获取场馆
         "GET /v1/stadium/:id":
         {
             "request":
