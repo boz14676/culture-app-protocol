@@ -14,6 +14,12 @@
         "SORT_ORDER": {
             "ASC": "asc",   // asc
             "DESC": "desc"  // desc
+        },
+
+        // 主题类型
+        "IMAGEABLE_TYPE": {
+            "ARTICLE": "article",       // 文章
+            "STADIUM": "stadium"        // 场馆
         }
   	},
 
@@ -22,14 +28,14 @@
         // 图片对象
         "PHOTO": {
             "id": "",
-            "name": "",                    // 名称
+            "name": "",                                 // 名称
             "url": {
-                "thumb": "",               // 缩略图
-                "large": ""                // 原图
+                "thumb": "",                            // 缩略图
+                "large": ""                             // 原图
             },
 
-            "imageable_type": "article",   // 主题类型 *仅用于搜索时使用
-            "imageable_id": ""             // 主题ID *仅用于搜索时使用
+            "imageable_type": "stadium",                // 主题类型 *仅用于搜索时使用
+            "imageable_id": "<IMAGEABLE_TYPE>"          // 主题ID *仅用于搜索时使用
         }
     },
 

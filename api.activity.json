@@ -26,8 +26,8 @@
 
         // 主题类型
         "ACTIVITIABLE_TYPE": {
-            "ARTICLE_CATEGORY": "article_category",     // 文章分类下面的活动
-            "ARTICLE": "article"                        // 文章下面的活动
+            "ARTICLE_CATEGORY": "article_category",     // 文章分类
+            "STADIUM": "stadium"                        // 场馆
         }
   	},
 
