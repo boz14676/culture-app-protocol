@@ -48,8 +48,8 @@
             "contact": "",                                  // 咨询电话
             "details": "",                                  // 内容
 
-            "acitivitiable_type": "<ACTIVITIABLE_TYPE>",    // 主题类型 *仅用于搜索时使用
-            "acitivitiable_id": ""                          // 主题ID *仅用于搜索时使用
+            "activitiable_type": "<ACTIVITIABLE_TYPE>",     // 主题类型 *仅用于搜索时使用
+            "activitiable_id": ""                           // 主题ID *仅用于搜索时使用
         }
     },
 
