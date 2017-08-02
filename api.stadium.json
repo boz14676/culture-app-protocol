@@ -2,7 +2,7 @@
     "meta":
     {
         "title"     : "Culture API",
-        "output"    : "article-api",
+        "output"    : "stadium-api",
         "author"    : "Taylor",
         "source"    : "none",
         "prefix"    : ""
@@ -14,28 +14,7 @@
         "SORT_ORDER": {
             "ASC": "asc",   // asc
             "DESC": "desc"  // desc
-        },
-
-        // 文章列表展示类型
-        "SHOWING_TYPE_LIST": {
-            "ONE": 1,
-            "TWO": 2,
-            "THREE": 3,
-            "FOUR": 4,
-            "FIVE": 5,
-            "SIX": 6,
-            "SEVEN": 7,
-            "EIGHT": 8
-        },
-
-        // 文章详情展示类型
-        "SHOWING_TYPE_INFOR": {
-            "ONE": 1,           // 介绍类型
-            "TWO": 2,           // 场馆类型
-            "THREE": 3,         // 预订类型
-            "FOUR": 4           // 播放类型
         }
-
   	},
 
     "model":
@@ -58,50 +37,36 @@
             "is_top_showing": 0                             // 是否展示在首页 [type: boolean(0, 1)] *仅用于首页展示使用
         },
 
-        // 文化场馆 详情
-        "VENUE_INFOR": {
-            "opening_hours": "",  // 营业时间
-            "contact": "",        // 联系方式
-            "transport": ""       // 公共交通
-        },
-
-        // 文章 对象
-        "ARTICLE": {
+        // 文化场馆 对象
+        "STADIUMS": {
             "id": 1,
             "original_article_category": "{ARTICLE_CATEGORY}",  // 文章分类 对象
             "article_category_id": 1,                           // 文章分类ID
-            "name": "",                                         // 名称（包含：姓名）
-            "thumbnail": "",                                    // 缩略图（包含：大师头像）
+            "name": "",                                         // 名称
+            "thumbnail": "",                                    // 缩略图
             "banner": "",                                       // banner（包含：背景图）
             "labels": [],                                       // 标签
+
+            "opening_hours": "",                                // 营业时间
+            "contact": "",                                      // 联系方式
+            "transport": "",                                    // 公共交通
 
             "lat": "116.421516,",                               // 坐标精度
             "lng": "116.421516,",                               // 坐标纬度
 
             "address": "",                                      // 位置
-            "desc": "",                                         // 用于：内容描述、专题简介、内容年代、主题、个人简介
-            "client_timed_at": "",                              // 时间
-
-            "activity_numbers": 2,                              // 活动数量
 
             "distance": 200,                                    // 距离（m）*仅做排序使用属性
 
-            "is_hot": 0,                                        // 是否热门 [type: boolean(0, 1)] *仅做搜索使用的属性
-            "is_hot2": 0,                                       // 是否热门2 [type: boolean(0, 1)] *仅做搜索使用的属性
-
+            "has_photos": 0,                                     // 是否有音乐 [type: boolean(0, 1)]
             "has_videos": 0,                                     // 是否有视频 [type: boolean(0, 1)]
-            "has_photos": 0,                                     // 是否有视频 [type: boolean(0, 1)]
 
             "has_commented_numbers": 100,                       // 评论数量 *可用作做排序使用的属性
             "has_liked_numbers": 100,                           // 点赞数量 *可用作排序使用的属性
 
             "reading_numbers": 100,                             // 阅读数量 *仅做排序使用的属性
 
-            "is_guess": 0,                                      // 猜你喜欢 [type: boolean(0, 1)] *仅做搜索使用的属性
-
-            "details": "",                                      // 内容
-
-            "extra": "{VENUE_INFOR}|''"                         // 扩展字段 [type: mixed] *可用于文化场馆的详情信息
+            "details": ""                                       // 内容
         },
 
         // 图片对象
@@ -120,23 +85,8 @@
 
     "controller":
     {
-        // 获取文章分类(s)
-        "GET /v1/article_categories":
-        {
-            "request":
-            {
-                "topid": 0,               // 上一级ID，没有为0
-                "q[attribute_name]": "",  // 搜索
-                "numbers": ""             // 显示数量，不传则返回全部
-            },
-            "response":
-            {
-                "data": ["{ARTICLE_CATEGORY}"]
-            }
-        },
-
         // 获取文章(s)
-        "GET /v1/articles":
+        "GET /v1/stadiums":
         {
             "request":
             {
@@ -151,33 +101,19 @@
             },
             "response":
             {
-                "data": ["{ARTICLE}"]
+                "data": ["{STADIUMS}"]
             }
         },
 
         // 获取文章
-        "GET /v1/article/:id":
+        "GET /v1/stadium/:id":
         {
             "request":
             {
             },
             "response":
             {
-                "data": "{ARTICLE}"
-            }
-        },
-
-        // 获取热搜(s)
-        "GET /v1/hotsearches":
-        {
-            "request":
-            {
-                "article_category_id": 1, // *文章分类ID
-                "numbers": 6              // 显示数量（默认为6）
-            },
-            "response":
-            {
-                "data": ["{HOTSEARCH}"]
+                "data": "{STADIUMS}"
             }
         }
     }
