@@ -48,11 +48,7 @@
             "name": "",                                     // 名称
             "icon": "",                                     // 图标
             "banner": "",                                   // banner
-            "desc": "",                                     // 简介
-
-            /************************************ 搜索属性 ************************************/
-            "topid": 0,                                     // 上级ID
-            "is_top_showing": 0                             // 是否展示在首页 [type: boolean(0, 1)] *仅用于首页展示使用
+            "desc": ""                                      // 简介
         },
 
         // 文章 对象
@@ -78,22 +74,7 @@
             "has_photos": 0,                                    // 是否有视频 [type: boolean(0, 1)]
 
             "details": "",                                      // 内容
-            "extra": "{VENUE_INFOR}|''",                        // 扩展字段 [type: mixed] *可用于文化场馆的详情信息
-
-            /************************************ 排序属性 ************************************/
-            "distance": "asc",                                  // 距离排序 *仅用作做排序使用的属性
-
-            "has_commented_numbers": 100,                       // 评论数量 *可用作做排序使用的属性
-            "has_liked_numbers": 100,                           // 点赞数量 *可用作排序使用的属性
-            "has_read_numbers": 100,                            // 阅读数量 *仅做排序使用的属性
-
-            /************************************ 搜索属性 ************************************/
-            "article_category_id": "{ARTICLE_CATEGORY.id}",     // 文章分类ID *仅用于搜索
-            "is_hot": 0,                                        // 是否热门 [type: boolean(0, 1)] *仅做搜索使用的属性
-            "is_hot2": 0,                                       // 是否热门2 [type: boolean(0, 1)] *仅做搜索使用的属性
-            "is_guess": 0                                       // 猜你喜欢 [type: boolean(0, 1)] *仅做搜索使用的属性
-
-
+            "extra": "'"                                        // 扩展字段 [type: mixed]
         }
     },
 
@@ -104,10 +85,10 @@
         {
             "request":
             {
-                "q[attribute_name]": "",  // 搜索
-                "s[attribute_name]": "",  // 排序
+                "numbers": "",                                      // 显示数量，不传则返回全部
 
-                "numbers": ""             // 显示数量，不传则返回全部
+                "q[topid]": 0,                                      // 上级ID
+                "q[is_top_showing]": 0                              // 是否展示在首页 [type: boolean(0, 1)] *仅用于首页展示使用
             },
             "response":
             {
@@ -120,14 +101,23 @@
         {
             "request":
             {
-                "page": "1",                          // *当前页数
-                "per_page": "10",                     // *每页显示的数量
+                "page": "1",                                   // *当前页数
+                "per_page": "10",                              // *每页显示的数量
 
-                "user_lat": "",                       // 用户坐标精度 *可选 排序、附近推荐可用
-                "user_lng": "",                       // 用户坐标纬度 *可选 排序、附近推荐可用
+                "user_lat": "",                                // 用户坐标精度 *可选 排序、附近推荐可用
+                "user_lng": "",                                // 用户坐标纬度 *可选 排序、附近推荐可用
 
-                "s[attribute_name]": "<SORT_ORDER>",  // 排序
-                "q[attribute_name]": ""               // 搜索
+                /************************************ 搜索 ************************************/
+                "s[distance]": "<SORT_ORDER>",                 // 距离排序 *仅用作做排序使用的属性
+                "s[has_commented_numbers]": "<SORT_ORDER>",    // 评论数量 *可用作做排序使用的属性
+                "s[has_liked_numbers]": "<SORT_ORDER>",        // 点赞数量 *可用作排序使用的属性
+                "s[has_read_numbers]": "<SORT_ORDER>",         // 阅读数量 *仅做排序使用的属性
+
+                /************************************ 排序 ************************************/
+                "article_category_id": "{ARTICLE_CATEGORY.id}",     // 文章分类ID *仅用于搜索
+                "is_hot": 0,                                        // 是否热门 [type: boolean(0, 1)] *仅做搜索使用的属性
+                "is_hot2": 0,                                       // 是否热门2 [type: boolean(0, 1)] *仅做搜索使用的属性
+                "is_guess": 0                                       // 猜你喜欢 [type: boolean(0, 1)] *仅做搜索使用的属性
             },
             "response":
             {

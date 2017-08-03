@@ -27,8 +27,8 @@
     "enum": {
         // 支付方式
         "PAYMENT_TYPE": {
-            "ALIPAY_WEB": "alipay_web", // 支付宝网页支付
-            "WXPAY_WEB": "wxpay_web"    // 微信公众号支付
+            "ALIPAY_WEB": "alipay.web", // 支付宝网页支付
+            "WXPAY_WEB": "wxpay.web"    // 微信公众号支付
         }
     },
 
@@ -59,7 +59,7 @@
     "controller": {
 
         // 支付方式
-        "POST /api.payment.list": {
+        "GET /payments": {
             "request": {
             },
             "response": {
