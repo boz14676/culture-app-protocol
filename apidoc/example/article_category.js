@@ -1,4 +1,16 @@
 /**
+ * @apiDefine ARTICLE_CATEGORY
+ *
+ * @apiVersion 0.1.0
+ *
+ * @apiSuccess {Number} showing_type_list   文章列表展示类型
+ * @apiSuccess {Number} showing_type_infor  文章详情展示类型
+ * @apiSuccess {String} name                名称
+ * @apiSuccess {String} icon                图标
+ * @apiSuccess {String} banner              banner
+ * @apiSuccess {String} desc                简介
+ */
+/**
  * @api {get} /article_categories 获取文章分类列表
  * @apiVersion 0.1.0
  * @apiName GetArticleCategories
@@ -16,7 +28,7 @@
  * @apiExample Example usage:
  * curl -i http://localhost/article_categories?q[topid]=0
  *
- * @apiUse ArticleCategory
+ * @apiUse ARTICLE_CATEGORY
  *
  * @apiUse BadRequestError
  */
