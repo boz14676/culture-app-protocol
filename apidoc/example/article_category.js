@@ -14,7 +14,7 @@
  * @api {get} /article_categories 获取文章分类列表
  * @apiVersion 0.1.0
  * @apiName GetArticleCategories
- * @apiGroup ArticleCategories
+ * @apiGroup ArticleCategory
  * @apiPermission none
  *
  * @apiDescription 文章分类标准接口

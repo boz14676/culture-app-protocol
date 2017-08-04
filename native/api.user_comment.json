@@ -40,7 +40,6 @@
             "details": "",                                  // 内容
             "created_at": "",                               // 新增时间
             "has_liked_number": "",                         // 被赞数量
-
             "is_cur_user_liked": 1                          // 是否被当前用户点赞 [type: boolean(0, 1)]
         }
     },

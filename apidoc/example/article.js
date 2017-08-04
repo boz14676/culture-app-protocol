@@ -15,20 +15,22 @@
  * @apiSuccess {String}     address                     位置
  * @apiSuccess {String}     desc                        用于：内容描述、专题简介、内容年代、主题、个人简介
  * @apiSuccess {Timestamp}  client_timed_at             时间
- * @apiSuccess {Boolean}    has_videos                  是否有视频
- * @apiSuccess {Boolean}    has_photos                  是否有视频
+ * @apiSuccess {Boolean}    has_videos                  是否包含视频
+ * @apiSuccess {Boolean}    has_photos                  是否包含视频
  * @apiSuccess {String}     details                     内容
  * @apiSuccess {Mixed}      extra                       扩展字段
  * @apiSuccess {Number}     has_commented_numbers       评论数量
  * @apiSuccess {Number}     has_liked_numbers           点赞数量
  * @apiSuccess {Number}     has_read_numbers            阅读数量
+ * @apiSuccess {Boolean}    is_cur_user_liked           是否被当前用户点赞
+ * @apiSuccess {Boolean}    is_cur_user_collected       是否被当前用户收藏
  */
 
 /**
  * @api {get} /articles 获取文章列表
  * @apiVersion 0.1.0
  * @apiName GetArticles
- * @apiGroup Articles
+ * @apiGroup Article
  * @apiPermission none
  *
  * @apiDescription 文章列表标准接口
@@ -50,7 +52,7 @@
  * @apiParam (距离排序) {Number}                page                       当前页数
  * @apiParam (距离排序) {Number}                per_page=10                每页显示的数量
  * @apiParam (距离排序) {Number}                q[article_category_id]     文章分类ID
- * @apiParam (距离排序) {String='desc', 'asc'}  s[distance]                 距离排序
+ * @apiParam (距离排序) {String='desc', 'asc'}  s[distance]                距离排序
  * @apiParam (距离排序) {String}                user_lat                   用户坐标精度
  * @apiParam (距离排序) {String}                user_lng                   用户坐标纬度
  *
@@ -92,7 +94,7 @@ function GetArticles() { return; }
  * @api {get} /article/:id 获取文章详情
  * @apiVersion 0.1.0
  * @apiName GetArticle
- * @apiGroup Articles
+ * @apiGroup Article
  * @apiPermission none
  *
  * @apiDescription 获取文章详情

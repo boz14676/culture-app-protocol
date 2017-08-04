@@ -32,7 +32,7 @@
 
     "controller":
     {
-        // 获取视频(s)
+        // 获取音乐(s)
         "GET /v1/musics":
         {
             "request":

@@ -1,10 +1,10 @@
 {
-  "name": "贵州文化云",
+  "name": "贵州文化云接口协议文档",
   "version": "0.1.0",
   "description": "culture api-protocol",
   "title": "贵州文化云接口协议文档",
   "url" : "http://app-server.culture.com/v1",
-  "sampleUrl": "http://appapi.pzjhw.com/v1",
+  "sampleUrl": "http://app-server.culture.app/v1",
   "header": {
     "title": "Base",
     "filename": "header.md"

@@ -9,13 +9,7 @@
  * @apiDefine RequestSuccess
  * @apiVersion 0.1.0
  *
- * @apiError error_codes   错误代码
- *
- * @apiErrorExample  Response (example):
- *     HTTP/1.1 400 Bad Request
- *     {
- *       "error_code": 0,
- *     }
+ * @apiSuccess error_code   错误代码
  */
 
 // ------------------------------------------------------------------------------------------
@@ -40,7 +34,7 @@
 // Current Permissions.
 // ------------------------------------------------------------------------------------------
 /**
- * @apiDefine user 登录用户
+ * @apiDefine CurUser 登录用户
  * 仅登录用户可访问
  *
  * @apiVersion 0.1.0
