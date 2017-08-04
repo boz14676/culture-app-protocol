@@ -16,7 +16,7 @@
             "STADIUM": "stadium",                        // 文化场馆
             "ACTIVITY": "activity",                      // 活动
             "VIDEO": "video",                            // 视频
-            "COMMENT": "comment"                         // 评论
+            "COMMENT": "user_comment"                     // 评论
         }
 
   	},
@@ -32,7 +32,7 @@
         // 活动对象
         "LIKE": {
             "id": 1,
-            "original_user": "{USER}"       // 用户对象
+            "original_user": "{USER}"                        // 用户对象
         }
     },
 
