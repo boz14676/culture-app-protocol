@@ -99,6 +99,8 @@ function GetArticles() { return; }
  *
  * @apiDescription 获取文章详情
  *
+ *
+ *
  * @apiExample Example usage:
  * curl -i http://localhost/article/1
  *

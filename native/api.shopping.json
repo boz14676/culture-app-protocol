@@ -82,7 +82,7 @@
             }
         },
 
-        // 支付团购商品 *token_needed
+        // 支付商品 *token_needed
         "POST /shopping/pays":
         {
             "request": {
