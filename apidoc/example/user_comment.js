@@ -72,12 +72,12 @@ function GetUserComments() { return; }
  * @apiDescription 用户对主题（文章、活动、文化场馆、视频、音乐）进行评论
  *
  * @apiHeader   {String}                                    Authorization       用户唯一访问密钥
- * @apiParam    {Enum=article,activity,stadium,video,music} q[commentable_type] 主题类型（文章、活动、文化场馆、视频、音乐）
- * @apiParam    {Number}                                    q[commentable_id]   主题ID
+ * @apiParam    {Enum=article,activity,stadium,video,music} commentable_type    主题类型（文章、活动、文化场馆、视频、音乐）
+ * @apiParam    {Number}                                    commentable_id      主题ID
  * @apiParam    {String}                                    details             内容
  *
  * @apiExample Example usage:
- * curl -i http://localhost/user/comment?q[commentable_type]=article&q[commentable_id]=1
+ * curl -i http://localhost/user/comment?commentable_type=article&commentable_id=1
  *
  * @apiUse RequestSuccess
  * @apiUse BadRequestError
