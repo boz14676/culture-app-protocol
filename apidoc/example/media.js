@@ -5,6 +5,7 @@
  *
  * @apiSuccess  {String}    id
  * @apiSuccess  {String}    name                    名称
+ * @apiSuccess  {String}    labels                  标签
  * @apiSuccess  {String}    thumbnail               缩略图
  * @apiSuccess  {String}    url                     视频地址
  * @apiSuccess  {Number}    has_commented_numbers   评论数量
@@ -50,7 +51,7 @@
  * @apiExample Example usage:
  * curl -i http://localhost/musics?q[musicable_type]=article_category&q[musicable_id]=1&page=1&per_page=10
  *
- * @apiUser MUSIC
+ * @apiUse MUSIC
  * @apiUse BadRequestError
  */
 function GetMusics() { return; }
@@ -70,7 +71,7 @@ function GetMusics() { return; }
  * @apiExample Example usage:
  * curl -i http://localhost/music/1
  *
- * @apiUser MUSIC
+ * @apiUse MUSIC
  * @apiSuccess  {Number}    prev_id 上一个音乐对象ID
  * @apiSuccess  {Number}    next_id 下一个音乐对象ID
  *

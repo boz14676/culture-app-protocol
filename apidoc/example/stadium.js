@@ -40,6 +40,10 @@
  * @apiParam    {String}    [user_lat]              用户坐标精度
  * @apiParam    {String}    [user_lng]              用户坐标纬度
  *
+ * @apiParam (区域筛选) {Number}    page                      当前页数
+ * @apiParam (区域筛选) {Number}    per_page=10               每页显示的数量
+ * @apiParam (区域筛选) {Number}    q[article_category_id]    文章分类ID
+ * @apiParam (区域筛选) {Number}    q[area_id]                区域ID
  *
  * @apiExample Example usage:
  * curl -i http://localhost/stadiums?q[article_category_id]=33&page=1&per_page=10

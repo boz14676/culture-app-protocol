@@ -34,6 +34,11 @@
  * @apiParam {Enum="article_category","stadium"}    q[activitiable_type]    主题类型（article_category: 文章分类、stadium: 文化场馆）
  * @apiParam {Number}                               q[activitiable_id]      主题ID
  *
+ * @apiParam (区域筛选) {Number}    page                      当前页数
+ * @apiParam (区域筛选) {Number}    per_page=10               每页显示的数量
+ * @apiParam (区域筛选) {Number}    q[article_category_id]    文章分类ID
+ * @apiParam (区域筛选) {Number}    q[area_id]                区域ID
+ *
  * @apiUse ACTIVITY
  *
  * @apiExample Example usage:

@@ -22,8 +22,8 @@
  * @apiSuccess {Number}     has_commented_numbers       评论数量
  * @apiSuccess {Number}     has_liked_numbers           点赞数量
  * @apiSuccess {Number}     has_read_numbers            阅读数量
- * @apiSuccess {Boolean}    is_cur_user_liked           是否被当前用户点赞
- * @apiSuccess {Boolean}    is_cur_user_collected       是否被当前用户收藏
+ * @apiSuccess {Boolean}      is_cur_user_liked             是否被当前用户点赞
+ * @apiParam {Boolean}      is_cur_user_collected       是否被当前用户收藏
  */
 
 /**
@@ -66,12 +66,23 @@
  * @apiParam (首页入口 - 猜你喜欢) {Number}     numbers=5       显示的数量
  * @apiParam (首页入口 - 猜你喜欢) {Boolean}    q[is_guess]=1   猜你喜欢
  *
- * @apiParam (文章分类主页 - 附近推荐入口) {Number}                 page                    当前页数
- * @apiParam (文章分类主页 - 附近推荐入口) {Number}                 per_page=10             每页显示的数量
+ * @apiParam (文章分类主页 - 附近推荐入口) {Number}                 numbers=5               显示的数量
  * @apiParam (文章分类主页 - 附近推荐入口) {Number}                 q[article_category_id]  文章分类ID
  * @apiParam (文章分类主页 - 附近推荐入口) {String='desc', 'asc'}   s[distance]             距离排序
  * @apiParam (文章分类主页 - 附近推荐入口) {String}                 user_lat                用户坐标精度
  * @apiParam (文章分类主页 - 附近推荐入口) {String}                 user_lng                用户坐标纬度
+ *
+ * @apiParam (附近推荐列表) {Number}                  page                    当前页数
+ * @apiParam (附近推荐列表) {Number}                  per_page=10             每页显示的数量
+ * @apiParam (附近推荐列表) {Number}                  q[article_category_id]  文章分类ID
+ * @apiParam (附近推荐列表) {String='desc', 'asc'}    s[distance]             距离排序
+ * @apiParam (附近推荐列表) {String}                  user_lat                用户坐标精度
+ * @apiParam (附近推荐列表) {String}                  user_lng                用户坐标纬度
+ *
+ * @apiParam (区域筛选) {Number}    page                      当前页数
+ * @apiParam (区域筛选) {Number}    per_page=10               每页显示的数量
+ * @apiParam (区域筛选) {Number}    q[article_category_id]    文章分类ID
+ * @apiParam (区域筛选) {Number}    q[area_id]                区域ID
  *
  * @apiParam (文章分类主页 - 推荐位1（近期热门、热门服务、热色推荐）入口) {Number}     numbers=5               显示的数量
  * @apiParam (文章分类主页 - 推荐位1（近期热门、热门服务、热色推荐）入口) {Number}     q[article_category_id]  文章分类ID
@@ -99,8 +110,6 @@ function GetArticles() { return; }
  * @apiPermission none
  *
  * @apiDescription 获取文章详情
- *
- *
  *
  * @apiExample Example usage:
  * curl -i http://localhost/article/1
