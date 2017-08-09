@@ -215,7 +215,7 @@ function PostFeedback() { return; }
  * @apiGroup User
  * @apiPermission CurUser
  *
- * @apiDescription 获取积分任务列表
+ * @apiDescription 获取积分任务
  *
  * @apiHeader   {String}    Authorization   用户唯一访问密钥
  *
@@ -232,13 +232,13 @@ function PostFeedback() { return; }
 function GetIntegralTasks() { return; }
 
 /**
- * @api {get} /user/integrals 获取用户的积分任务记录
+ * @api {get} /user/integrals 获取用户的积分明细
  * @apiVersion 0.1.0
  * @apiName GetUserIntegrals
  * @apiGroup User
  * @apiPermission CurUser
  *
- * @apiDescription 获取用户的积分任务记录
+ * @apiDescription 获取用户的积分明细
  *
  * @apiHeader   {String}    Authorization   用户唯一访问密钥
  * @apiParam    {Number}    page            当前页数
