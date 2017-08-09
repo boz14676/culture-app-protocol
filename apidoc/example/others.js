@@ -74,9 +74,9 @@ function GetAreas() { return; }
  * @apiVersion 0.1.0
  * @apiName GetLabels
  * @apiGroup Others
- * @apiPermission 获取标签
+ * @apiPermission none
  *
- * @apiDescription 获取地区
+ * @apiDescription 获取标签
  *
  * @apiParam {String=1,2,3}   q[article_category_id]  文章`一级`分类ID
  *
