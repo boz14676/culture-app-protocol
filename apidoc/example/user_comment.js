@@ -4,6 +4,8 @@
  * @apiVersion 0.1.0
  *
  * @apiSuccess {Number}     id
+ * @apiSuccess {String}     commentable_type    评论主题类型
+ * @apiSuccess {Number}     commentable_id      评论主题ID
  * @apiSuccess {Object}     original_user       用户对象
  * @apiSuccess {String}     detail              内容
  * @apiSuccess {Timestamp}  created_at          新增时间
@@ -58,6 +60,8 @@ function GetComments() { return; }
  * curl -i http://localhost/user/comments?q[commentable_type]=article&q[commentable_id]=1&page=1&per_page=10
  *
  * @apiUse USER_COMMENT
+ * @apiSuccess  {Ojbect}    commentable 评论主题对象
+ *
  * @apiUse BadRequestError
  */
 function GetUserComments() { return; }
