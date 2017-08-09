@@ -103,6 +103,28 @@ function Register() { return; }
 function CheckOriginalPassword() { return; }
 
 /**
+ * @api {put} /user/password 修改密码
+ * @apiVersion 0.1.0
+ * @apiName PutPaswword
+ * @apiGroup User
+ * @apiPermission CurUser
+ *
+ * @apiDescription 修改密码
+ *
+ * @apiHeader   {String}    Authorization       用户唯一访问密钥
+ * @apiParam    {String}    password            新密码
+ * @apiParam    {String}    repeat_password     重复新密码
+ *
+ *
+ * @apiExample Example usage:
+ * curl -i http://localhost/user/password?password=123456&repeat_password=123456
+ *
+ * @apiUse RequestSuccess
+ * @apiUse BadRequestError
+ */
+function PutPaswword() { return; }
+
+/**
  * @api {put} /user/avatar 更改头像
  * @apiVersion 0.1.0
  * @apiName PatchAvatar
