@@ -185,3 +185,51 @@ function PutIdentification() { return; }
  * @apiUse BadRequestError
  */
 function PostFeedback() { return; }
+
+/**
+ * @api {get} /integral_tasks 获取积分任务
+ * @apiVersion 0.1.0
+ * @apiName GetIntegralTasks
+ * @apiGroup User
+ * @apiPermission CurUser
+ *
+ * @apiDescription 获取积分任务列表
+ *
+ * @apiHeader   {String}    Authorization   用户唯一访问密钥
+ *
+ * @apiExample Example usage:
+ * curl -i http://localhost/integral_tasks
+ *
+ * @apiSuccess {Number}     id
+ * @apiSuccess {String}     name        名称
+ * @apiSuccess {Enum=1,2}   type        任务类型（首次、每日）
+ * @apiSuccess {Number}     quantities  积分量
+ *
+ * @apiUse BadRequestError
+ */
+function GetIntegralTasks() { return; }
+
+/**
+ * @api {get} /user/integrals 获取用户的积分任务记录
+ * @apiVersion 0.1.0
+ * @apiName GetUserIntegrals
+ * @apiGroup User
+ * @apiPermission CurUser
+ *
+ * @apiDescription 获取用户的积分任务记录
+ *
+ * @apiHeader   {String}    Authorization   用户唯一访问密钥
+ * @apiParam    {Number}    page            当前页数
+ * @apiParam    {Number}    per_page=10     每页显示的数量
+ *
+ * @apiExample Example usage:
+ * curl -i http://localhost/user/integrals
+ *
+ * @apiSuccess {Number}     id
+ * @apiSuccess {String}     name        名称
+ * @apiSuccess {String}     quantities  积分量
+ * @apiSuccess {Timestamp}  created_at  增加积分时间
+ *
+ * @apiUse BadRequestError
+ */
+function GetUserIntegrals() { return; }
