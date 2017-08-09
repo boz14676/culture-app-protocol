@@ -3,12 +3,10 @@
  *
  * @apiVersion 0.1.0
  *
- * @apiSuccess {Number} id
- * @apiSuccess {Object} original_article    文章对象（`collectable_type` 为 `article` 时存在）
- * @apiSuccess {Object} original_activity   活动对象（`collectable_type` 为 `activity` 时存在）
- * @apiSuccess {Object} original_video      视频对象（`collectable_type` 为 `video` 时存在）
- * @apiSuccess {String} collectable_type    主题类型
- * @apiSuccess {Number} collectable_id      主题ID
+ * @apiSuccess {Number}                                     id
+ * @apiSuccess {Object}                                     original_collectable    收藏的主题对象
+ * @apiSuccess {Enum=article,activity,video,stadium,music}  collectable_type        主题类型（文章、活动、视频、场馆、音乐）
+ * @apiSuccess {Number}                                     collectable_id          主题ID
  */
 
 /**
