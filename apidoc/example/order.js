@@ -60,3 +60,22 @@ function GetUserOrders() { return; }
  * @apiUse BadRequestError
  */
 function GetUserOrder() { return; }
+
+/**
+ * @api {delete} /user/order/:id 取消订单
+ * @apiVersion 0.1.0
+ * @apiName DeleteOrder
+ * @apiGroup Order
+ * @apiPermission CurUser
+ *
+ * @apiDescription 取消订单
+ *
+ * @apiHeader   {String}    Authorization   用户唯一访问密钥
+ *
+ * @apiExample Example usage:
+ * curl -i http://localhost/user/order/1
+ *
+ * @apiUse ORDER
+ * @apiUse BadRequestError
+ */
+function DeleteOrder() { return; }
