@@ -127,28 +127,6 @@ function CheckOriginalPassword() { return; }
 function PutPaswword() { return; }
 
 /**
- * @api {put} /user/avatar 更改头像
- * @apiVersion 0.1.0
- * @apiName PatchAvatar
- * @apiGroup User
- * @apiPermission CurUser
- *
- * @apiDescription 更改头像
- *
- * @apiHeader   {String}    Authorization   用户唯一访问密钥
- * @apiParam    {File}      photo           图片
- *
- *
- * @apiExample Example usage:
- * curl -i http://localhost/user/avatar
- *
- * @apiSuccess url {url} 图片路径
- *
- * @apiUse BadRequestError
- */
-function PatchAvatar() { return; }
-
-/**
  * @api {put} /user/profile 修改用户资料
  * @apiVersion 0.1.0
  * @apiName PutUserProfile
