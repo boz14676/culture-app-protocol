@@ -45,6 +45,7 @@
  * @apiParam (区域筛选) {Number}    q[article_category_id]    文章分类ID
  * @apiParam (区域筛选) {Number}    q[area_id]                区域ID
  *
+ *
  * @apiExample Example usage:
  * curl -i http://localhost/stadiums?q[article_category_id]=33&page=1&per_page=10
  *

@@ -8,6 +8,7 @@
  * @apiSuccess  {String}    labels                  标签
  * @apiSuccess  {String}    thumbnail               缩略图
  * @apiSuccess  {String}    url                     视频地址
+ * @apiSuccess  {Number}    has_read_numbers        观看数量
  * @apiSuccess  {Number}    has_commented_numbers   评论数量
  * @apiSuccess  {Number}    has_liked_numbers       点赞数量
  * @apiSuccess  {Boolean}   is_cur_user_liked       是否被当前用户点赞
@@ -24,7 +25,7 @@
  * @apiSuccess  {String}    thumbnail               缩略图
  * @apiSuccess  {String}    url                     地址
  * @apiSuccess  {String}    singer_name             歌手名称
- * @apiSuccess  {String}    lenstening_numbers      观看次数
+ * @apiSuccess  {Number}    has_read_numbers        观看数量
  * @apiSuccess  {Number}    has_commented_numbers   评论数量
  * @apiSuccess  {Number}    has_liked_numbers       点赞数量
  * @apiSuccess  {Boolean}   is_cur_user_liked       是否被当前用户点赞

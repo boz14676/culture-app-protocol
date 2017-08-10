@@ -22,6 +22,7 @@
  * @apiSuccess {Number}     has_commented_numbers       评论数量
  * @apiSuccess {Number}     has_liked_numbers           点赞数量
  * @apiSuccess {Number}     has_read_numbers            阅读数量
+ * @apiSuccess {Number}     has_activity_numbers        活动数量
  * @apiSuccess {Boolean}    is_cur_user_liked           是否被当前用户点赞
  * @apiSuccess {Boolean}    is_cur_user_collected       是否被当前用户收藏
  */
