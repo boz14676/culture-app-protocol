@@ -4,6 +4,8 @@
  * @apiVersion 0.1.0
  *
  * @apiSuccess {String}     nickname                        用户昵称
+ * @apiSuccess {Enum=0,1,2} gender                          性别（未选择、男、女）
+ * @apiSuccess {String}     signature                       个性签名
  * @apiSuccess {Url}        avatar                          用户头像
  * @apiSuccess {Number}     integral_quantities             积分
  * @apiSuccess {Boolean}    is_bind                         是否绑定
@@ -147,24 +149,27 @@ function PutPaswword() { return; }
 function PatchAvatar() { return; }
 
 /**
- * @api {put} /user 修改用户资料
+ * @api {put} /user/profile 修改用户资料
  * @apiVersion 0.1.0
- * @apiName PutAvatar
+ * @apiName PutUserProfile
  * @apiGroup User
  * @apiPermission CurUser
  *
  * @apiDescription 修改用户资料
  *
- * @apiHeader   {String}    Authorization   用户唯一访问密钥
- * @apiParam    {String}    nickname        昵称
+ * @apiHeader   {String}        Authorization   用户唯一访问密钥
+ * @apiParam    {String}        nickname        昵称
+ * @apiParam    {Enum=1,2}      gender          性别
+ * @apiParam    {File}          avatar          头像
+ * @apiParam    {Stirng}        signature       个性签名
  *
  * @apiExample Example usage:
- * curl -i http://localhost/user?nickname=Taylor
+ * curl -i http://localhost/user/profile
  *
  * @apiUse RequestSuccess
  * @apiUse BadRequestError
  */
-function PutAvatar() { return; }
+function PutUserProfile() { return; }
 
 /**
  * @api {post} /user/identification 提交实名认证
