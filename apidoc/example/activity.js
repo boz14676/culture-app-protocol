@@ -8,6 +8,8 @@
  * @apiSuccess {Oject}      original_article_category   所属文章分类对象
  * @apiSuccess {Boolean}    is_free                     是否为免费
  * @apiSuccess {String}     name                        名称
+ * @apiSuccess {String}     lat                         坐标精度
+ * @apiSuccess {String}     lng                         坐标纬度
  * @apiSuccess {Array}      labels                      标签(s)
  * @apiSuccess {Number}     thumbnail                   缩略图
  * @apiSuccess {Number}     banner                      banner
