@@ -49,6 +49,27 @@
 function GetActivities() { return; }
 
 /**
+ * @api {get} /activity/:id/relateds 获取相关活动列表
+ * @apiVersion 0.1.0
+ * @apiName GetRelatedActivities
+ * @apiGroup Activity
+ * @apiPermission none
+ *
+ * @apiDescription 获取相关活动列表
+ *
+ * @apiParam {Number}   page        当前页数
+ * @apiParam {Number}   per_page=10 每页显示的数量
+ *
+ * @apiUse ACTIVITY
+ *
+ * @apiExample Example usage:
+ * curl -i http://localhost/activity/1/relateds
+ *
+ * @apiUse BadRequestError
+ */
+function GetRelatedActivities() { return; }
+
+/**
  * @api {get} /activity/:id 获取活动详情
  * @apiVersion 0.1.0
  * @apiName GetActivity
