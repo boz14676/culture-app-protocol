@@ -87,3 +87,22 @@ function GetUserComments() { return; }
  * @apiUse BadRequestError
  */
 function PostUserComment() { return; }
+
+/**
+ * @api {delete} /user/comment/:id 用户删除评论
+ * @apiVersion 0.1.0
+ * @apiName DeleteUserComment
+ * @apiGroup UserComment
+ * @apiPermission CurUser
+ *
+ * @apiDescription 用户删除主题（文章、活动、文化场馆、视频、音乐）进行评论
+ *
+ * @apiHeader   {String}                                    Authorization       用户唯一访问密钥
+ *
+ * @apiExample Example usage:
+ * curl -i http://localhost/user/comment/1
+ *
+ * @apiUse RequestSuccess
+ * @apiUse BadRequestError
+ */
+function DeleteUserComment() { return; }
