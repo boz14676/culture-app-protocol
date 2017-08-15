@@ -31,7 +31,8 @@
  * @apiDescription 登录
  *
  * @apiParam {Number}   mobile      用户手机号
- * @apiParam {Number}   password    密码
+ * @apiParam {Number}   [password]  密码（当`code`不存在时，此字段为必填）
+ * @apiParam {Number}   [code]      手机验证码（当`password`不存在时，此字段为必填）
  *
  *
  * @apiExample Example usage:
