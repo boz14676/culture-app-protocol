@@ -7,6 +7,7 @@
  * @apiSuccess {Object}                                     original_collectable    收藏的主题对象
  * @apiSuccess {Enum=article,activity,video,stadium,music}  collectable_type        主题类型（文章、活动、视频、场馆、音乐）
  * @apiSuccess {Number}                                     collectable_id          主题ID
+ * @apiSuccess {DATE}                                       collected_at            收藏时间
  */
 
 /**
