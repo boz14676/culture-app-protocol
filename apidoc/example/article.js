@@ -40,7 +40,7 @@
  * @apiParam {Number} per_page=10               每页显示的数量
  * @apiParam {Number} q[article_category_id]    文章分类ID
  *
- * @apiParam (关键字模糊查询)  {String}           keywords                     关键字
+ * @apiParam (关键字模糊查询)  {String}    q[keywords] 关键字
  *
  * @apiParam (点赞量排序) {Number}               page                        当前页数
  * @apiParam (点赞量排序) {Number}               per_page=10                 每页显示的数量
