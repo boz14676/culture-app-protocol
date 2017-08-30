@@ -44,6 +44,29 @@
 function Login() { return; }
 
 /**
+ * @api {post} /user/login/social 第三方授权登录
+ * @apiVersion 0.1.0
+ * @apiName LoginSocial
+ * @apiGroup User
+ * @apiPermission none
+ *
+ * @apiDescription 第三方授权登录
+ *
+ * @apiParam {Number=1,2,3} vendor  平台（微信、微博、QQ）
+ *
+ * @apiParam    (微信授权)  {Number=1,2,3} vendor=1 平台（微信、微博、QQ）
+ * @apiParam    (微信授权)  {Number=1,2,3} code     CODE
+ *
+ *
+ * @apiExample Example usage:
+ * curl -i http://localhost/user/login/social?vendor=<VENDOR>
+ *
+ * @apiUse USER
+ * @apiUse BadRequestError
+ */
+function LoginSocial() { return; }
+
+/**
  * @api {post} /user/code 发送验证码
  * @apiVersion 0.1.0
  * @apiName SendCode

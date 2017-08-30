@@ -5,7 +5,7 @@
  *
  * @apiSuccess {Number}                         id
  * @apiSuccess {Number}                         serial_number           订单编号
- * @apiSuccess {Enum=1,2,3}                     status                  订单状态（已取消、等待支付、已支付）
+ * @apiSuccess {Enum=-1,0,1,2,3,4}              status                  订单状态（已取消、等待支付、已支付、退款中、退款成功、退款失败）
  * @apiSuccess {Decimal}                        goods_price             商品单价
  * @apiSuccess {Number}                         goods_numbers           商品数量
  * @apiSuccess {Decimal}                        amount                  订单总金额
