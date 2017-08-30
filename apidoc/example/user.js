@@ -44,7 +44,7 @@
 function Login() { return; }
 
 /**
- * @api {post} /user/login/social 第三方授权登录
+ * @api {get} /user/login/social 第三方授权登录
  * @apiVersion 0.1.0
  * @apiName LoginSocial
  * @apiGroup User
