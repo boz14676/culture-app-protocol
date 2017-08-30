@@ -55,11 +55,11 @@ function Login() { return; }
  * @apiParam {Number=1,2,3} vendor  平台（微信、微博、QQ）
  *
  * @apiParam    (微信授权)  {Number=1,2,3} vendor=1 平台（微信、微博、QQ）
- * @apiParam    (微信授权)  {Number=1,2,3} code     CODE
+ * @apiParam    (微信授权)  {String=1,2,3} code     CODE
  *
- * @apiParam    (QQ授权)  {Number=1,2,3} vendor=3 平台（微信、微博、QQ）
- * @apiParam    (QQ授权)  {Number} access_token   ACCESS_TOKEN
- * @apiParam    (QQ授权)  {Number} openid         OPENID
+ * @apiParam    (QQ授权)  {Number=1,2,3}  vendor=3 平台（微信、微博、QQ）
+ * @apiParam    (QQ授权)  {String}        access_token   ACCESS_TOKEN
+ * @apiParam    (QQ授权)  {String}        openid         OPENID
  *
  *
  * @apiExample Example usage:
