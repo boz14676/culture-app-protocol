@@ -52,8 +52,6 @@ function Login() { return; }
  *
  * @apiDescription 第三方授权登录
  *
- * @apiParam {Number=1,2,3} vendor  平台（微信、微博、QQ）
- *
  * @apiParam    (微信授权)  {Number=1,2,3} vendor=1 平台（微信、微博、QQ）
  * @apiParam    (微信授权)  {String=1,2,3} code     CODE
  *
